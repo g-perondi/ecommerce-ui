@@ -9,7 +9,7 @@ import { NgForOf } from '@angular/common';
     NgForOf
   ],
   template: `
-    <footer class="md:rounded-lg bg-zinc-100 shadow-sm dark:bg-zinc-900 ">
+    <footer class="md:rounded-t-md bg-zinc-100 shadow-sm dark:bg-zinc-900 ">
 
       <div class="flex md:flex-row flex-col items-center px-5 justify-between">
 
