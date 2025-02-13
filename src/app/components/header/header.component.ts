@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IconsModule } from '../../../../icons.module';
 import { NgClass, NgForOf, NgIf, NgOptimizedImage } from '@angular/common';
 import { HeaderItemComponent } from './header-item/header-item.component';
@@ -26,11 +26,11 @@ import { MobileHeaderItemComponent } from './mobile-header-item/mobile-header-it
 
         <div class="md:flex hidden flex-1 items-center justify-end pr-5">
           <app-header-item
-            (itemClicked)="onItemClicked($event)"
             *ngFor="let item of menuItems"
             [title]="item.title"
             [icon]="item.icon"
-            [subMenus]="item.submenus" />
+            [subMenus]="item.submenus"
+            (itemClicked)="onItemClicked($event)" />
         </div>
 
         <div class="block md:hidden ml-auto pr-4 my-auto" >
@@ -64,36 +64,12 @@ import { MobileHeaderItemComponent } from './mobile-header-item/mobile-header-it
   `,
   styles: []
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
-  menuItems: {"title": string, "icon": string | undefined, submenus: string[] | undefined}[] = [
-    {
-      title: "Home",
-      icon: undefined,
-      submenus: undefined
-    },
-    {
-      title: "About us",
-      icon: undefined,
-      submenus: undefined
-    },
-    {
-      title: "Products",
-      icon: undefined,
-      submenus: undefined
-    },
-    {
-      title: "Cart",
-      icon: "shopping-cart",
-      submenus: ["Cart Items"]
-    },
-    {
-      title: "Profile",
-      icon: "user",
-      submenus: ["Profile", "Orders", "Logout"]
-    },
-  ];
-  mobileMenuItems: string[] = ["Home", "Products", "Cart", "Profile"];
+  userLoggedIn: boolean = true;
+
+  menuItems?: {"title": string, "icon": string | undefined, submenus: string[] | undefined}[];
+  mobileMenuItems?: string[];
 
   mobileMenuOpen = false;
 
@@ -102,7 +78,62 @@ export class HeaderComponent {
   }
 
   onItemClicked(title: string) {
+    console.log(title);
+  }
 
+  ngOnInit(): void {
+    if(this.userLoggedIn) {
+      this.menuItems = [
+        {
+          title: "Home",
+          icon: undefined,
+          submenus: undefined
+        },
+        {
+          title: "About us",
+          icon: undefined,
+          submenus: undefined
+        },
+        {
+          title: "Products",
+          icon: undefined,
+          submenus: undefined
+        },
+        {
+          title: "Cart",
+          icon: "shopping-cart",
+          submenus: ["Cart Items"]
+        },
+        {
+          title: "Profile",
+          icon: "user",
+          submenus: ["Profile", "Orders", "Logout"]
+        }];
+      this.mobileMenuItems = ["Home", "Products", "Cart", "Profile"]
+    } else {
+      this.menuItems = [
+        {
+          title: "Home",
+          icon: undefined,
+          submenus: undefined
+        },
+        {
+          title: "About us",
+          icon: undefined,
+          submenus: undefined
+        },
+        {
+          title: "Products",
+          icon: undefined,
+          submenus: undefined
+        },
+        {
+          title: "Login",
+          icon: "log-in",
+          submenus: undefined
+        }];
+    }
+    this.mobileMenuItems = this.mobileMenuItems = ["Home", "Products", "Cart", "Login"]
   }
 
 }

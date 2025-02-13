@@ -24,4 +24,5 @@ import { NewsletterFormComponent } from '../components/newsletter-form/newslette
 export class HomeComponent {
 
 
+
 }
