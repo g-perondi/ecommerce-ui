@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-main-content',
+  selector: 'app-products',
   imports: [],
   template: `
     <p>PRODUCTS</p>
