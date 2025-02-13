@@ -2,6 +2,15 @@
 
 @import "tailwindcss";
 
-body {
-  font-family: "Poppins", sans-serif;
+/*noinspection CssInvalidAtRule*/
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+
+  body {
+    @apply bg-zinc-50;
+    font-family: "Poppins", sans-serif;
+
+  }
+
 }

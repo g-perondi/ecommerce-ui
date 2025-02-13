@@ -4,9 +4,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   selector: 'app-footer-item',
   imports: [],
   template: `
-    <li>
-      <p (click)="onItemClicked(name)" class="hover:underline me-4 md:me-6">{{ name }}</p>
-    </li>
+    <p (click)="onItemClicked(name)" class="cursor-pointer hover:underline py-1 px-8">{{ name }}</p>
   `,
   styles: []
 })

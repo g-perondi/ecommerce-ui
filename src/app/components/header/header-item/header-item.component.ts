@@ -17,7 +17,7 @@ import { NgForOf, NgIf } from '@angular/common';
       <a *ngIf="!icon" href="#">{{ title }}</a>
       <a *ngIf="icon" class="h-[30px]" href="#"><i-feather [name]="icon"></i-feather></a>
 
-      <div *ngIf="subMenus" class="absolute bg-amber-600 top-full right-0 whitespace-nowrap rounded-b-md">
+      <div *ngIf="subMenus" class="absolute bg-amber-600 top-full w-40 right-0 whitespace-nowrap rounded-b-md">
 
         <div
           *ngFor="let title of subMenus"
