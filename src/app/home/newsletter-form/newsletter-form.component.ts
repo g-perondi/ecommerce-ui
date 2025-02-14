@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   template: `
       <div class="flex my-auto flex-col items-center justify-center bg-white/40 py-2 px-4 rounded-xl text-center backdrop-blur-md">
           <div>
-              <img src="/brand-logo.svg" alt="" width="200">
+              <img src="assets/images/brand-logo.svg" alt="" width="200">
           </div>
           <div class="mt-3 text-sm ">
               Keep me updated with news and promotions

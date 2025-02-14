@@ -9,8 +9,8 @@ import { Component } from '@angular/core';
 
         <div class="md:pr-5 flex items-center">
           <a href="#" class="">
-            <img src="/brand-logo-black.svg" class="h-16 dark:hidden" alt="Tee Party Logo"/>
-            <img src="/brand-logo.svg" class="h-16 hidden dark:block" alt="Tee Party Logo"/>
+            <img src="assets/images/brand-logo-black.svg" class="h-16 dark:hidden" alt="Tee Party Logo"/>
+            <img src="assets/images/brand-logo.svg" class="h-16 hidden dark:block" alt="Tee Party Logo"/>
           </a>
         </div>
 
