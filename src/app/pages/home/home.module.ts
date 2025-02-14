@@ -4,7 +4,7 @@ import {FormsModule} from "@angular/forms";
 
 import {HomeComponent} from "./home.component";
 import {NewsletterFormComponent} from "./newsletter-form/newsletter-form.component";
-import {SharedModule} from "../shared/shared.module";
+import {SharedModule} from "../../shared/shared.module";
 import {HomeRoutingModule} from "./home-routing.module";
 
 

@@ -1,9 +1,9 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
 
-import {HomeModule} from "./home/home.module";
-import {ProductsModule} from "./products/products.module";
-import {UserProfileModule} from "./user-profile/user-profile.module";
+import {HomeModule} from "./pages/home/home.module";
+import {ProductsModule} from "./pages/products/products.module";
+import {UserProfileModule} from "./pages/user-profile/user-profile.module";
 
 const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch: "full"},

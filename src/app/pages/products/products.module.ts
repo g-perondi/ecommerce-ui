@@ -5,7 +5,7 @@ import {ProductsListComponent} from "./products-list/products-list.component";
 import {ProductDetailsComponent} from "./product-details/product-details.component";
 import {ProductCardComponent} from "./products-list/product-card/product-card.component";
 import {ProductsComponent} from "./products.component";
-import {SharedModule} from "../shared/shared.module";
+import {SharedModule} from "../../shared/shared.module";
 
 @NgModule({
   declarations: [

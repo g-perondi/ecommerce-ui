@@ -3,6 +3,7 @@ import {type HeaderItem} from "./HeaderItem.model";
 
 @Component({
   selector: "app-header-item",
+  standalone: false,
   template: `
     <div
       (click)="onClickMenuItem(headerItem.path, $event)"
@@ -25,7 +26,6 @@ import {type HeaderItem} from "./HeaderItem.model";
       </div>
     </div>
   `,
-  standalone: false,
   styles: []
 })
 export class HeaderItemComponent {

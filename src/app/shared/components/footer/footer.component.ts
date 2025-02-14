@@ -1,7 +1,9 @@
-import {Component} from "@angular/core";
+import {Component, inject} from "@angular/core";
+import {Router} from '@angular/router';
 
 @Component({
   selector: "app-footer",
+  standalone: false,
   template: `
     <footer class="md:rounded-t-md bg-zinc-100 shadow-sm">
 
@@ -24,15 +26,25 @@ import {Component} from "@angular/core";
 
     </footer>
   `,
-  standalone: false,
   styles: []
 })
 export class FooterComponent {
 
+  private readonly router: Router = inject(Router);
+
   footerItems: string[] = ["Privacy Policy", "Shipping & Returns", "Contact"];
 
-  onItemClicked(title: string) {
-    console.log(title);
+  async onItemClicked(path: string) {
+    try {
+      const success = await this.router.navigate([path]);
+      if (success) {
+        console.log('success');
+      } else {
+        console.log('fail');
+      }
+    } catch (error) {
+      console.error('error', error);
+    }
   }
 
 }

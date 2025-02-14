@@ -7,6 +7,7 @@ import {HeaderComponent} from "./components/header/header.component";
 import {HeaderItemComponent} from './components/header/header-item/header-item.component';
 import {IconsModule} from '../../../icons.module';
 import {FeatherModule} from 'angular-feather';
+import {Router} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import {FeatherModule} from 'angular-feather';
   imports: [
     CommonModule,
     FeatherModule,
-    IconsModule,
+    IconsModule
   ],
   exports: [
     FooterComponent,

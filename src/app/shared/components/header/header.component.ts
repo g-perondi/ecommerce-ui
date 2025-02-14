@@ -1,9 +1,10 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, inject, OnInit} from "@angular/core";
 import {Router} from "@angular/router";
 import {HeaderItem} from "./header-item/HeaderItem.model";
 
 @Component({
   selector: "app-header",
+  standalone: false,
   template: `
     <header class="fixed w-full text-zinc-200 scroll z-10">
 
@@ -36,7 +37,7 @@ import {HeaderItem} from "./header-item/HeaderItem.model";
 
           <div
             *ngIf="mobileMenuOpen"
-            class="z-20 absolute top-[60px] bg-gradient-to-r from-sky-900 via-pink-700 to-amber-600 w-full left-0">
+            class="z-10 absolute top-[60px] bg-gradient-to-r from-sky-900 via-pink-700 to-amber-600 w-full left-0">
 
             <app-header-item
               (itemClicked)="onItemClicked($event)"
@@ -49,10 +50,11 @@ import {HeaderItem} from "./header-item/HeaderItem.model";
 
     </header>
   `,
-  standalone: false,
   styles: []
 })
 export class HeaderComponent implements OnInit {
+
+  private readonly router: Router = inject(Router);
 
   userLoggedIn = true;
 
@@ -60,9 +62,6 @@ export class HeaderComponent implements OnInit {
   mobileHeaderItems!: HeaderItem[];
 
   mobileMenuOpen = false;
-
-  constructor(private readonly router: Router) {
-  }
 
   onToggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
