@@ -17,7 +17,7 @@ export const t_shirts: Product[] =
         "price": 19.99,
         "special_price": 14.99,
         "discount": 0.25,
-        "image": "tshirt_1.webp"
+        "image": "t-shirt-1.png"
     },
     {
         "product_id": 10002,
@@ -26,7 +26,7 @@ export const t_shirts: Product[] =
         "price": 24.99,
         "special_price": 19.99,
         "discount": 0.2,
-        "image": "tshirt_2.webp"
+        "image": "t-shirt-2.png"
     },
     {
         "product_id": 10003,
@@ -35,7 +35,7 @@ export const t_shirts: Product[] =
         "price": 29.99,
         "special_price": 24.99,
         "discount": 0.17,
-        "image": "tshirt_3.webp"
+        "image": "t-shirt-3.png"
     },
     {
         "product_id": 10004,
@@ -44,7 +44,7 @@ export const t_shirts: Product[] =
         "price": 22.99,
         "special_price": 18.99,
         "discount": 0.17,
-        "image": "tshirt_4.webp"
+        "image": "t-shirt-4.png"
     },
     {
         "product_id": 10005,
@@ -53,7 +53,7 @@ export const t_shirts: Product[] =
         "price": 27.99,
         "special_price": 22.99,
         "discount": 0.18,
-        "image": "tshirt_5.webp"
+        "image": "t-shirt-5.png"
     },
     {
         "product_id": 10006,
@@ -62,7 +62,7 @@ export const t_shirts: Product[] =
         "price": 20.99,
         "special_price": 16.99,
         "discount": 0.19,
-        "image": "tshirt_6.webp"
+        "image": "t-shirt-6.png"
     },
     {
         "product_id": 10007,
@@ -71,7 +71,7 @@ export const t_shirts: Product[] =
         "price": 32.99,
         "special_price": 26.99,
         "discount": 0.18,
-        "image": "tshirt_7.webp"
+        "image": "t-shirt-7.png"
     },
     {
         "product_id": 10008,
@@ -80,7 +80,7 @@ export const t_shirts: Product[] =
         "price": 21.99,
         "special_price": 17.99,
         "discount": 0.18,
-        "image": "tshirt_8.webp"
+        "image": "t-shirt-8.png"
     },
     {
         "product_id": 10009,
@@ -89,7 +89,7 @@ export const t_shirts: Product[] =
         "price": 23.99,
         "special_price": 19.99,
         "discount": 0.17,
-        "image": "tshirt_9.webp"
+        "image": "t-shirt-9.png"
     },
     {
         "product_id": 10010,
@@ -98,7 +98,7 @@ export const t_shirts: Product[] =
         "price": 25.99,
         "special_price": 20.99,
         "discount": 0.19,
-        "image": "tshirt_10.webp"
+        "image": "t-shirt-10.png"
     },
     {
         "product_id": 10011,
@@ -107,7 +107,7 @@ export const t_shirts: Product[] =
         "price": 26.99,
         "special_price": 21.99,
         "discount": 0.19,
-        "image": "tshirt_11.webp"
+        "image": "t-shirt-11.png"
     },
     {
         "product_id": 10012,
@@ -116,7 +116,7 @@ export const t_shirts: Product[] =
         "price": 30.99,
         "special_price": 24.99,
         "discount": 0.19,
-        "image": "tshirt_12.webp"
+        "image": "t-shirt-12.png"
     },
     {
         "product_id": 10013,
@@ -125,7 +125,7 @@ export const t_shirts: Product[] =
         "price": 28.99,
         "special_price": 22.99,
         "discount": 0.21,
-        "image": "tshirt_13.webp"
+        "image": "t-shirt-13.png"
     },
     {
         "product_id": 10014,
@@ -134,7 +134,7 @@ export const t_shirts: Product[] =
         "price": 34.99,
         "special_price": 27.99,
         "discount": 0.2,
-        "image": "tshirt_14.webp"
+        "image": "t-shirt-14.png"
     },
     {
         "product_id": 10015,
@@ -143,7 +143,7 @@ export const t_shirts: Product[] =
         "price": 27.49,
         "special_price": 22.49,
         "discount": 0.18,
-        "image": "tshirt_15.webp"
+        "image": "t-shirt-15.png"
     },
     {
         "product_id": 10016,
@@ -152,7 +152,7 @@ export const t_shirts: Product[] =
         "price": 22.49,
         "special_price": 18.49,
         "discount": 0.18,
-        "image": "tshirt_16.webp"
+        "image": "t-shirt-16.png"
     },
     {
         "product_id": 10017,
@@ -161,7 +161,7 @@ export const t_shirts: Product[] =
         "price": 26.99,
         "special_price": 21.99,
         "discount": 0.19,
-        "image": "tshirt_17.webp"
+        "image": "t-shirt-17.png"
     },
     {
         "product_id": 10018,
@@ -170,7 +170,7 @@ export const t_shirts: Product[] =
         "price": 24.49,
         "special_price": 19.99,
         "discount": 0.18,
-        "image": "tshirt_18.webp"
+        "image": "t-shirt-18.png"
     },
     {
         "product_id": 10019,
@@ -179,7 +179,7 @@ export const t_shirts: Product[] =
         "price": 31.99,
         "special_price": 25.99,
         "discount": 0.19,
-        "image": "tshirt_19.webp"
+        "image": "t-shirt-19.png"
     },
     {
         "product_id": 10020,
@@ -188,7 +188,7 @@ export const t_shirts: Product[] =
         "price": 35.99,
         "special_price": 28.99,
         "discount": 0.19,
-        "image": "tshirt_20.webp"
+        "image": "t-shirt-20.png"
     },
     {
         "product_id": 10021,
@@ -197,7 +197,7 @@ export const t_shirts: Product[] =
         "price": 27.99,
         "special_price": 22.99,
         "discount": 0.18,
-        "image": "tshirt_21.webp"
+        "image": "t-shirt-21.png"
     },
     {
         "product_id": 10022,
@@ -206,7 +206,7 @@ export const t_shirts: Product[] =
         "price": 33.99,
         "special_price": 27.99,
         "discount": 0.18,
-        "image": "tshirt_22.webp"
+        "image": "t-shirt-22.png"
     },
     {
         "product_id": 10023,
@@ -215,7 +215,7 @@ export const t_shirts: Product[] =
         "price": 29.49,
         "special_price": 23.99,
         "discount": 0.19,
-        "image": "tshirt_23.webp"
+        "image": "t-shirt-23.png"
     },
     {
         "product_id": 10024,
@@ -224,7 +224,7 @@ export const t_shirts: Product[] =
         "price": 31.99,
         "special_price": 25.99,
         "discount": 0.19,
-        "image": "tshirt_24.webp"
+        "image": "t-shirt-24.png"
     },
     {
         "product_id": 10025,
@@ -233,7 +233,7 @@ export const t_shirts: Product[] =
         "price": 26.99,
         "special_price": 21.99,
         "discount": 0.19,
-        "image": "tshirt_25.webp"
+        "image": "t-shirt-25.png"
     },
     {
         "product_id": 10026,
@@ -242,7 +242,7 @@ export const t_shirts: Product[] =
         "price": 24.99,
         "special_price": 19.99,
         "discount": 0.2,
-        "image": "tshirt_26.webp"
+        "image": "t-shirt-26.png"
     },
     {
         "product_id": 10027,
@@ -251,7 +251,7 @@ export const t_shirts: Product[] =
         "price": 32.99,
         "special_price": 26.49,
         "discount": 0.2,
-        "image": "tshirt_27.webp"
+        "image": "t-shirt-27.png"
     },
     {
         "product_id": 10028,
@@ -260,7 +260,7 @@ export const t_shirts: Product[] =
         "price": 28.99,
         "special_price": 23.49,
         "discount": 0.19,
-        "image": "tshirt_28.webp"
+        "image": "t-shirt-28.png"
     },
     {
         "product_id": 10029,
@@ -269,7 +269,7 @@ export const t_shirts: Product[] =
         "price": 30.99,
         "special_price": 24.99,
         "discount": 0.19,
-        "image": "tshirt_29.webp"
+        "image": "t-shirt-29.png"
     },
     {
         "product_id": 10030,
@@ -278,7 +278,7 @@ export const t_shirts: Product[] =
         "price": 27.99,
         "special_price": 22.99,
         "discount": 0.18,
-        "image": "tshirt_30.webp"
+        "image": "t-shirt-30.png"
     },
     {
         "product_id": 10031,
@@ -287,7 +287,7 @@ export const t_shirts: Product[] =
         "price": 34.99,
         "special_price": 28.49,
         "discount": 0.19,
-        "image": "tshirt_31.webp"
+        "image": "t-shirt-31.png"
     },
     {
         "product_id": 10032,
@@ -296,7 +296,7 @@ export const t_shirts: Product[] =
         "price": 36.99,
         "special_price": 29.99,
         "discount": 0.19,
-        "image": "tshirt_32.webp"
+        "image": "t-shirt-32.png"
     },
     {
         "product_id": 10033,
@@ -305,7 +305,7 @@ export const t_shirts: Product[] =
         "price": 29.99,
         "special_price": 24.49,
         "discount": 0.18,
-        "image": "tshirt_33.webp"
+        "image": "t-shirt-33.png"
     },
     {
         "product_id": 10034,
@@ -314,7 +314,7 @@ export const t_shirts: Product[] =
         "price": 25.99,
         "special_price": 20.99,
         "discount": 0.19,
-        "image": "tshirt_34.webp"
+        "image": "t-shirt-34.png"
     },
     {
         "product_id": 10035,
@@ -323,7 +323,7 @@ export const t_shirts: Product[] =
         "price": 35.99,
         "special_price": 28.99,
         "discount": 0.19,
-        "image": "tshirt_35.webp"
+        "image": "t-shirt-35.png"
     },
     {
         "product_id": 10036,
@@ -332,7 +332,7 @@ export const t_shirts: Product[] =
         "price": 27.99,
         "special_price": 22.49,
         "discount": 0.2,
-        "image": "tshirt_36.webp"
+        "image": "t-shirt-36.png"
     },
     {
         "product_id": 10037,
@@ -341,7 +341,7 @@ export const t_shirts: Product[] =
         "price": 26.49,
         "special_price": 21.49,
         "discount": 0.19,
-        "image": "tshirt_37.webp"
+        "image": "t-shirt-37.png"
     },
     {
         "product_id": 10038,
@@ -350,7 +350,7 @@ export const t_shirts: Product[] =
         "price": 30.99,
         "special_price": 25.49,
         "discount": 0.18,
-        "image": "tshirt_38.webp"
+        "image": "t-shirt-38.png"
     },
     {
         "product_id": 10039,
@@ -359,7 +359,7 @@ export const t_shirts: Product[] =
         "price": 31.99,
         "special_price": 25.99,
         "discount": 0.19,
-        "image": "tshirt_39.webp"
+        "image": "t-shirt-39.png"
     },
     {
         "product_id": 10040,
@@ -368,7 +368,7 @@ export const t_shirts: Product[] =
         "price": 28.99,
         "special_price": 23.49,
         "discount": 0.19,
-        "image": "tshirt_40.webp"
+        "image": "t-shirt-40.png"
     },
     {
         "product_id": 10041,
@@ -377,7 +377,7 @@ export const t_shirts: Product[] =
         "price": 24.99,
         "special_price": 19.99,
         "discount": 0.2,
-        "image": "tshirt_41.webp"
+        "image": "t-shirt-41.png"
     },
     {
         "product_id": 10042,
@@ -386,7 +386,7 @@ export const t_shirts: Product[] =
         "price": 29.49,
         "special_price": 23.49,
         "discount": 0.2,
-        "image": "tshirt_42.webp"
+        "image": "t-shirt-42.png"
     },
     {
         "product_id": 10043,
@@ -395,7 +395,7 @@ export const t_shirts: Product[] =
         "price": 33.99,
         "special_price": 27.49,
         "discount": 0.19,
-        "image": "tshirt_43.webp"
+        "image": "t-shirt-43.png"
     },
     {
         "product_id": 10044,
@@ -404,7 +404,7 @@ export const t_shirts: Product[] =
         "price": 35.49,
         "special_price": 28.49,
         "discount": 0.2,
-        "image": "tshirt_44.webp"
+        "image": "t-shirt-44.png"
     },
     {
         "product_id": 10045,
@@ -413,7 +413,7 @@ export const t_shirts: Product[] =
         "price": 27.99,
         "special_price": 22.99,
         "discount": 0.18,
-        "image": "tshirt_45.webp"
+        "image": "t-shirt-45.png"
     },
     {
         "product_id": 10046,
@@ -422,7 +422,7 @@ export const t_shirts: Product[] =
         "price": 31.49,
         "special_price": 25.99,
         "discount": 0.18,
-        "image": "tshirt_46.webp"
+        "image": "t-shirt-46.png"
     },
     {
         "product_id": 10047,
@@ -431,7 +431,7 @@ export const t_shirts: Product[] =
         "price": 28.99,
         "special_price": 23.99,
         "discount": 0.17,
-        "image": "tshirt_47.webp"
+        "image": "t-shirt-47.png"
     },
     {
         "product_id": 10048,
@@ -440,7 +440,7 @@ export const t_shirts: Product[] =
         "price": 34.99,
         "special_price": 27.99,
         "discount": 0.2,
-        "image": "tshirt_48.webp"
+        "image": "t-shirt-48.png"
     },
     {
         "product_id": 10049,
@@ -449,7 +449,7 @@ export const t_shirts: Product[] =
         "price": 29.99,
         "special_price": 24.49,
         "discount": 0.18,
-        "image": "tshirt_49.webp"
+        "image": "t-shirt-49.png"
     },
     {
         "product_id": 10050,
@@ -458,6 +458,6 @@ export const t_shirts: Product[] =
         "price": 26.99,
         "special_price": 21.99,
         "discount": 0.19,
-        "image": "tshirt_50.webp"
+        "image": "t-shirt-50.png"
     }
 ];
