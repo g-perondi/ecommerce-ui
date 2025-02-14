@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {NgModule} from "@angular/core";
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
-import { HomeComponent } from './home.component';
-import { NewsletterFormComponent } from './newsletter-form/newsletter-form.component';
-import { SharedModule } from '../shared/shared.module';
-import {HomeRoutingModule} from './home-routing.module';
+import {HomeComponent} from "./home.component";
+import {NewsletterFormComponent} from "./newsletter-form/newsletter-form.component";
+import {SharedModule} from "../shared/shared.module";
+import {HomeRoutingModule} from "./home-routing.module";
 
 
 @NgModule({
@@ -20,4 +20,5 @@ import {HomeRoutingModule} from './home-routing.module';
     SharedModule
   ]
 })
-export class HomeModule { }
+export class HomeModule {
+}

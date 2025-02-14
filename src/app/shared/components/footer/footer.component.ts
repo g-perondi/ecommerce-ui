@@ -1,16 +1,15 @@
-import { Component } from '@angular/core';
+import {Component} from "@angular/core";
 
 @Component({
-  selector: 'app-footer',
+  selector: "app-footer",
   template: `
-    <footer class="md:rounded-t-md bg-zinc-100 shadow-sm dark:bg-zinc-900 ">
+    <footer class="md:rounded-t-md bg-zinc-100 shadow-sm">
 
       <div class="flex md:flex-row flex-col items-center px-5 justify-between">
 
         <div class="md:pr-5 flex items-center">
           <a href="#" class="">
-            <img src="assets/images/brand-logo-black.svg" class="h-16 dark:hidden" alt="Tee Party Logo"/>
-            <img src="assets/images/brand-logo.svg" class="h-16 hidden dark:block" alt="Tee Party Logo"/>
+            <img src="assets/images/brand-logo-black.svg" class="h-16" alt="Tee Party Logo"/>
           </a>
         </div>
 

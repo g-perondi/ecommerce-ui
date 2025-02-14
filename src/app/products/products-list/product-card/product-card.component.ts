@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from "@angular/core";
 
 @Component({
-  selector: 'app-product-card',
+  selector: "app-product-card",
   standalone: false,
   template: `
     <p>

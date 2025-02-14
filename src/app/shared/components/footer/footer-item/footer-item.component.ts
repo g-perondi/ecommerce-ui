@@ -1,12 +1,12 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from "@angular/core";
 
 @Component({
-    selector: 'app-footer-item',
-    template: `
-        <p (click)="onItemClicked(name)" class="cursor-pointer hover:underline py-1 px-8">{{ name }}</p>
-    `,
-    standalone: false,
-    styles: []
+  selector: "app-footer-item",
+  template: `
+    <p (click)="onItemClicked(name)" class="cursor-pointer hover:underline py-1 px-8">{{ name }}</p>
+  `,
+  standalone: false,
+  styles: []
 })
 export class FooterItemComponent {
 
