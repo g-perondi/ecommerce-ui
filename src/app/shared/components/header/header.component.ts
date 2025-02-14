@@ -56,7 +56,7 @@ export class HeaderComponent implements OnInit {
 
   private readonly router: Router = inject(Router);
 
-  userLoggedIn = true;
+  userLoggedIn = false;
 
   headerItems!: HeaderItem[];
   mobileHeaderItems!: HeaderItem[];
@@ -158,35 +158,13 @@ export class HeaderComponent implements OnInit {
           name: "Cart",
           path: "cart",
           icon: "shopping-cart",
-          subMenus: [
-            {
-              name: "Cart Items",
-              path: "",
-              icon: undefined
-            }
-          ]
+          subMenus: undefined
         },
         {
           name: "Profile",
           path: "profile",
           icon: "user",
-          subMenus: [
-            {
-              name: "Profile",
-              path: "profile",
-              icon: undefined
-            },
-            {
-              name: "Orders",
-              path: "orders",
-              icon: undefined
-            },
-            {
-              name: "Logout",
-              path: "logout",
-              icon: undefined
-            }
-          ]
+          subMenus: undefined
         }];
     } else {
       this.headerItems = [

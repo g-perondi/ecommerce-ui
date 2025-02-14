@@ -7,7 +7,7 @@ import {Component} from "@angular/core";
     <div
       class="flex my-auto flex-col items-center justify-center bg-white/40 py-2 px-4 rounded-xl text-center backdrop-blur-md">
       <div>
-        <img src="assets/images/brand-logo.svg" alt="" width="200">
+        <img ngSrc="assets/images/brand-logo.svg" alt="" height="200" width="200" priority>
       </div>
       <div class="mt-3 text-sm ">
         Keep me updated with news and promotions
@@ -18,6 +18,7 @@ import {Component} from "@angular/core";
           type="email"
           name="email"
           placeholder="Email"
+          autocomplete="off"
           [(ngModel)]="enteredEmail"
         >
         <button
