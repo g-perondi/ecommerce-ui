@@ -8,4 +8,5 @@ import {Component} from "@angular/core";
   standalone: false,
   styleUrl: "./app.component.css"
 })
-export class AppComponent {}
+export class AppComponent {
+}

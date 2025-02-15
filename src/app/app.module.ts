@@ -3,6 +3,7 @@ import {BrowserModule} from "@angular/platform-browser";
 import {AppComponent} from "./app.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {RouterOutlet} from "@angular/router";
+import {IconsModule} from '../../icons.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import {RouterOutlet} from "@angular/router";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterOutlet
+    RouterOutlet,
+    IconsModule
   ],
   bootstrap: [AppComponent]
 })

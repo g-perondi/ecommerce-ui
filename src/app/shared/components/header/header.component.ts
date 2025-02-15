@@ -8,9 +8,9 @@ import {HeaderItem} from "./header-item/HeaderItem.model";
   template: `
     <header class="fixed w-full text-zinc-200 scroll z-10">
 
-      <nav class="sticky flex top-0 bg-gradient-to-r from-sky-900 via-pink-700 to-amber-600 z-10">
+      <nav class="sticky flex top-0 bg-gradient-to-r from-sky-900 via-pink-700 to-amber-600 z-10 h-[62px]">
 
-        <div class="flex items-center gap-2 pl-4 h-[62px]">
+        <div class="flex items-center gap-2 pl-4">
           <img src="assets/images/brand-logo.svg" alt="brand logo" width="60" height="60">
         </div>
 
@@ -68,16 +68,17 @@ export class HeaderComponent implements OnInit {
   }
 
   async onItemClicked(path: string) {
-      try {
-        const success = await this.router.navigate([path]);
-        if (success) {
-          console.log('success');
-        } else {
-          console.log('fail');
-        }
-      } catch (error) {
-        console.error('error', error);
+    try {
+      const success = await this.router.navigate([path]);
+      this.mobileMenuOpen = !this.mobileMenuOpen;
+      if (success) {
+        console.log('success');
+      } else {
+        console.log('fail');
       }
+    } catch (error) {
+      console.error('error', error);
+    }
   }
 
   ngOnInit(): void {

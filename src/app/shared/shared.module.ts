@@ -7,7 +7,8 @@ import {HeaderComponent} from "./components/header/header.component";
 import {HeaderItemComponent} from './components/header/header-item/header-item.component';
 import {IconsModule} from '../../../icons.module';
 import {FeatherModule} from 'angular-feather';
-import {Router} from '@angular/router';
+import {LayoutComponent} from './components/layout/layout.component';
+import {RouterOutlet} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,17 +16,20 @@ import {Router} from '@angular/router';
     FooterItemComponent,
     HeaderComponent,
     HeaderItemComponent,
+    LayoutComponent,
   ],
   imports: [
     CommonModule,
     FeatherModule,
-    IconsModule
+    IconsModule,
+    RouterOutlet
   ],
   exports: [
     FooterComponent,
     FooterItemComponent,
     HeaderComponent,
     HeaderItemComponent,
+    LayoutComponent,
   ]
 })
 export class SharedModule {

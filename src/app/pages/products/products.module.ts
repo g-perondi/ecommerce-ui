@@ -6,6 +6,7 @@ import {ProductDetailsComponent} from "./product-details/product-details.compone
 import {ProductCardComponent} from "./products-list/product-card/product-card.component";
 import {ProductsComponent} from "./products.component";
 import {SharedModule} from "../../shared/shared.module";
+import {IconsModule} from '../../../../icons.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {SharedModule} from "../../shared/shared.module";
   imports: [
     CommonModule,
     ProductsRoutingModule,
-    SharedModule
+    SharedModule,
+    IconsModule
   ]
 })
 export class ProductsModule {

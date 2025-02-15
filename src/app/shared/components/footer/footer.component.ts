@@ -5,7 +5,7 @@ import {Router} from '@angular/router';
   selector: "app-footer",
   standalone: false,
   template: `
-    <footer class="md:rounded-t-md bg-zinc-100 shadow-sm">
+    <footer class="bg-zinc-100 shadow-sm">
 
       <div class="flex md:flex-row flex-col items-center px-5 justify-between">
 

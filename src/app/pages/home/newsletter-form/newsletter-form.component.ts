@@ -6,6 +6,7 @@ import {Component} from "@angular/core";
   template: `
     <div
       class="flex my-auto flex-col items-center justify-center bg-white/40 py-2 px-4 rounded-xl text-center backdrop-blur-md">
+
       <div>
         <img ngSrc="assets/images/brand-logo.svg" alt="" height="200" width="200" priority>
       </div>
@@ -27,6 +28,7 @@ import {Component} from "@angular/core";
           Subscribe
         </button>
       </form>
+
     </div>
   `,
   styles: []
