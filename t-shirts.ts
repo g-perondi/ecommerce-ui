@@ -1,14 +1,6 @@
-export interface Product {
-    "product_id": number,
-    "product_name": string
-    "description": string,
-    "price": number,
-    "special_price": number,
-    "discount": number,
-    "image": string
-}
+import {Product} from './src/app/pages/products/product.model';
 
-export const t_shirts: Product[] =
+export const T_SHIRTS: Product[] =
 [
     {
         "product_id": 10001,

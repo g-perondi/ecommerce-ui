@@ -70,8 +70,8 @@ export class HeaderComponent implements OnInit {
   async onItemClicked(path: string) {
     try {
       const success = await this.router.navigate([path]);
-      this.mobileMenuOpen = !this.mobileMenuOpen;
       if (success) {
+        this.mobileMenuOpen = false;
         console.log('success');
       } else {
         console.log('fail');
@@ -86,7 +86,7 @@ export class HeaderComponent implements OnInit {
       this.headerItems = [
         {
           name: "Home",
-          path: "/",
+          path: "",
           icon: undefined,
           subMenus: undefined
         },

@@ -1,6 +1,6 @@
 export interface HeaderItem {
   name: string;
   path: string;
-  icon: string | undefined;
+  icon?: string;
   subMenus?: HeaderItem[];
 }

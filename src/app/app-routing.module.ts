@@ -17,7 +17,8 @@ const routes: Routes = [
       {path: "profile", loadChildren: () => UserProfileModule},
       {path: "**", redirectTo: ""}
     ]
-  }
+  },
+  {path: "**", redirectTo: ""}
 ];
 
 @NgModule({
