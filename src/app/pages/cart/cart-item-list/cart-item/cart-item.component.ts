@@ -13,7 +13,7 @@ import { type CartItem } from "./cart-item.model";
         <label for="counter-input" class="sr-only">Choose quantity:</label>
         <div class="flex items-center justify-between md:order-3 md:justify-end">
           <div class="flex items-center">
-            <button type="button" id="decrement-button-5" data-input-counter-decrement="counter-input-5"
+            <button (click)="onDecrement()" type="button" id="decrement-button-5" data-input-counter-decrement="counter-input-5"
                     class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
               <svg class="h-2.5 w-2.5 text-gray-900 dark:text-white" aria-hidden="true"
                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
@@ -24,7 +24,7 @@ import { type CartItem } from "./cart-item.model";
             <input type="text" id="counter-input-5" data-input-counter
                    class="w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 dark:text-white"
                    placeholder="" value="{{cartItem.quantity}}" required/>
-            <button type="button" id="increment-button-5" data-input-counter-increment="counter-input-5"
+            <button (click)="onIncrement()" type="button" id="increment-button-5" data-input-counter-increment="counter-input-5"
                     class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
               <svg class="h-2.5 w-2.5 text-gray-900 dark:text-white" aria-hidden="true"
                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
@@ -46,6 +46,7 @@ import { type CartItem } from "./cart-item.model";
           <div class="flex items-center gap-4">
 
             <button type="button"
+                    (click)="onDeleteItem()"
                     class="inline-flex items-center text-sm font-medium text-red-600 hover:underline dark:text-red-500">
               <svg class="me-1.5 h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                    fill="none" viewBox="0 0 24 24">
@@ -65,5 +66,25 @@ import { type CartItem } from "./cart-item.model";
 export class CartItemComponent {
 
   @Input({required: true}) cartItem!: CartItem;
+
+  @Output() cartItemChange = new EventEmitter<CartItem>();
+
+  onDecrement() {
+    this.cartItem.quantity--;
+    if (this.cartItem.quantity <= 0) {
+      this.cartItem.quantity = 0;
+    }
+    this.cartItemChange.emit(this.cartItem);
+  }
+
+  onIncrement() {
+    this.cartItem.quantity++;
+    this.cartItemChange.emit(this.cartItem);
+  }
+
+  onDeleteItem() {
+    this.cartItem.quantity = 0;
+    this.cartItemChange.emit(this.cartItem);
+  }
 
 }

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { Product } from '../product.model';
 import { T_SHIRTS } from '../../../../../t-shirts';
 
@@ -20,6 +20,6 @@ import { T_SHIRTS } from '../../../../../t-shirts';
 })
 export class ProductListComponent {
 
-  products: Product[] = T_SHIRTS;
+  @Input() products?: Product[];
 
 }

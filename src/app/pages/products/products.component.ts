@@ -1,4 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { T_SHIRTS } from '../../../../t-shirts';
+import { Product } from './product.model';
 
 @Component({
   selector: "app-products",
@@ -6,9 +8,9 @@ import { Component } from "@angular/core";
   template: `
     <div class="flex flex-col gap-6 items-center justify-center px-5 bg-zinc-200 full-screen">
 
-      <app-filter-bar/>
+      <app-filter-bar (filtersSet)="onSetFilters($event)" />
 
-      <app-product-list />
+      <app-product-list [products]="products"/>
 
       <app-pagination/>
 
@@ -16,7 +18,17 @@ import { Component } from "@angular/core";
   `,
   styles: []
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit {
 
+  products!: Product[];
+  productFilters: any;
 
+  ngOnInit(): void {
+    this.products = T_SHIRTS;
+  }
+
+  onSetFilters(filters: { minPrice?: number; maxPrice?: number; query?: string }) {
+    this.productFilters = filters;
+    console.log(this.productFilters);
+  }
 }

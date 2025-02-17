@@ -19,9 +19,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
               </svg>
             </div>
             <input
+              name="minPrice"
               [(ngModel)]="minPrice"
               type="number"
-              class="p-2.5 w-full z-20 ps-10 text-sm text-gray-900 bg-gray-50 rounded-lg border-gray-50 border focus:ring-blue-500 focus:border-blue-500"
+              class="p-2.5 w-full z-20 ps-10 text-sm text-gray-900 bg-gray-50 rounded-lg border-gray-50 border"
               placeholder="Min price"/>
           </div>
 
@@ -33,11 +34,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
                       d="M5 2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1M2 5h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
               </svg>
             </div>
-            <input
-              [(ngModel)]="maxPrice"
-              type="number"
-              class="p-2.5 w-full z-20 ps-10 text-sm text-gray-900 bg-gray-50 rounded-lg border-gray-50  border  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-e-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-              placeholder="Max price"/>
+            <input type="number"
+                   name="maxPrice"
+                   [(ngModel)]="maxPrice"
+                   class="p-2.5 w-full z-20 ps-10 text-sm text-gray-900 bg-gray-50 rounded-lg border-gray-50 border"
+                   placeholder="Max price"/>
           </div>
 
         </div>
@@ -51,14 +52,14 @@ import { Component, EventEmitter, Output } from '@angular/core';
                       d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
               </svg>
             </div>
-            <input
-              [(ngModel)]="searchQuery"
-              type="search"
-              class="w-full p-2.5 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50"
-              placeholder="Search Product..."/>
+            <input type="search"
+                   name="searchQuery"
+                   [(ngModel)]="searchQuery"
+                   class="w-full p-2.5 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50"
+                   placeholder="Search Product..."/>
           </div>
           <button type="submit"
-                  class="text-white bg-gradient-to-r from-sky-900 via-pink-700 to-amber-600 hover:opacity-90 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  class="text-white bg-gradient-to-r from-sky-900 via-pink-700 to-amber-600 hover:opacity-90 font-medium rounded-lg text-sm px-4 py-2.5">
             Search
           </button>
         </div>
@@ -84,17 +85,28 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class FilterBarComponent {
 
-  minPrice: number = 0;
-  maxPrice: number = 9999999;
-  searchQuery: string = "";
+  minPrice?: number;
+  maxPrice?: number;
+  searchQuery?: string;
 
-  @Output() onFilterChange: EventEmitter<{minPrice: number; maxPrice: number; query: string}> = new EventEmitter();
+  @Output() filtersSet = new EventEmitter<{minPrice?: number; maxPrice?: number; query?: string;}>();
 
   onSubmit() {
-    this.onFilterChange.emit({
+
+    if(!this.minPrice && !this.maxPrice && !this.searchQuery) {
+      console.log("invalid filter");
+      return;
+    }
+
+    this.filtersSet.emit({
       minPrice: this.minPrice,
       maxPrice: this.maxPrice,
-      query: this.searchQuery
+      query: this.searchQuery,
+    });
+    console.log({
+      minPrice: this.minPrice,
+      maxPrice: this.maxPrice,
+      query: this.searchQuery,
     });
   }
 }
