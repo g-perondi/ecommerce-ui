@@ -25,7 +25,7 @@ import { Cart } from './cart.model';
                   <dl class="flex items-center justify-between gap-4">
                     <dt class="text-base font-normal text-gray-500 dark:text-gray-400">Original price</dt>
                     <dd class="text-base font-medium text-gray-900 dark:text-white">
-                      {{ cart.totalPrice | currency }}
+                      {{ originalPrice | currency }}
                     </dd>
                   </dl>
 
@@ -47,7 +47,7 @@ import { Cart } from './cart.model';
               </div>
 
               <a href="#"
-                 class="flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Proceed
+                 class="flex w-full items-center justify-center rounded-lg bg-black px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Proceed
                 to Checkout</a>
 
               <div class="flex items-center justify-center gap-2">
@@ -96,7 +96,8 @@ export class CartComponent {
       }
     ]
   };
-  totalSaving = this.cart.totalPrice - this.cart.cartItems.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
+  originalPrice = this.cart.cartItems.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
+  totalSaving = this.cart.totalPrice - this.originalPrice;
 
 
 }

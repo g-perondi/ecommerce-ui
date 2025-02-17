@@ -17,5 +17,4 @@ export class CartItemListComponent {
 
   @Input({required: true}) cartItems: CartItem[] = [];
 
-
 }
