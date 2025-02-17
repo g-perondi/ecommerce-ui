@@ -1,11 +1,11 @@
 import { Component } from "@angular/core";
-import { Cart } from './cart.model';
+import { type Cart } from './cart.model';
 
 @Component({
   selector: "app-cart",
   template: `
 
-    <section class="bg-zinc-50 py-8 antialiased dark:bg-gray-900 md:py-16">
+    <section class="bg-zinc-50 py-8 antialiased dark:bg-gray-900 md:py-16 full-screen">
       <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
         <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">Shopping Cart</h2>
 
@@ -52,7 +52,7 @@ import { Cart } from './cart.model';
 
               <div class="flex items-center justify-center gap-2">
                 <span class="text-sm font-normal text-gray-500 dark:text-gray-400"> or </span>
-                <a href="#" title=""
+                <a href="/products" title=""
                    class="inline-flex items-center gap-2 text-sm font-medium text-primary-700 underline hover:no-underline dark:text-primary-500">
                   Continue Shopping
                   <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -76,7 +76,7 @@ export class CartComponent {
 
   cart: Cart = {
     cartId: 1,
-    totalPrice: 240.0,
+    totalPrice: 320.0,
     cartItems: [
       {
         cartItemId: 1,
@@ -89,13 +89,14 @@ export class CartComponent {
           discount: 0.2,
           image: "tshirt_1.png"
         },
-        quantity: 3,
+        quantity: 4,
         totalPrice: 80.00,
         discount: 0.2,
         image: "tshirt_1.png"
       }
     ]
   };
+
   originalPrice = this.cart.cartItems.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
   totalSaving = this.cart.totalPrice - this.originalPrice;
 

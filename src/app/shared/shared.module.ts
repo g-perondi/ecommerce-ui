@@ -11,6 +11,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { RouterOutlet } from '@angular/router';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { FilterBarComponent } from './components/filters/filter-bar/filter-bar.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -27,12 +28,13 @@ import { FilterBarComponent } from './components/filters/filter-bar/filter-bar.c
     FilterBarComponent,
     PaginationComponent
   ],
-  imports: [
-    CommonModule,
-    FeatherModule,
-    IconsModule,
-    RouterOutlet
-  ]
+    imports: [
+        CommonModule,
+        FeatherModule,
+        IconsModule,
+        RouterOutlet,
+        FormsModule
+    ]
 })
 export class SharedModule {
 }

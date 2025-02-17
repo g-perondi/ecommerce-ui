@@ -6,7 +6,7 @@ import { Component } from "@angular/core";
   template: `
     <app-header/>
 
-    <main class="mt-[62px]">
+    <main class="mt-[62px] full-screen">
       <router-outlet/>
     </main>
 

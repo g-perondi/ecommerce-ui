@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: "app-filter-bar",
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   template: `
     <div class="flex flex-col w-full gap-1 items-center p-4 mt-10 rounded-md bg-white shadow-md">
 
-      <form class="flex items-center justify-between gap-1 w-full">
+      <form class="flex items-center justify-between gap-1 w-full" (ngSubmit)="onSubmit()">
 
         <div class="w-1/3 md:w-1/4 flex flex-col gap-1">
 
@@ -18,9 +18,11 @@ import { Component } from '@angular/core';
                       d="M5 2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1M2 5h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
               </svg>
             </div>
-            <input type="number"
-                   class="p-2.5 w-full z-20 ps-10 text-sm text-gray-900 bg-gray-50 rounded-lg border-gray-50 border focus:ring-blue-500 focus:border-blue-500"
-                   placeholder="Min price"/>
+            <input
+              [(ngModel)]="minPrice"
+              type="number"
+              class="p-2.5 w-full z-20 ps-10 text-sm text-gray-900 bg-gray-50 rounded-lg border-gray-50 border focus:ring-blue-500 focus:border-blue-500"
+              placeholder="Min price"/>
           </div>
 
           <div class="relative">
@@ -31,9 +33,11 @@ import { Component } from '@angular/core';
                       d="M5 2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1M2 5h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
               </svg>
             </div>
-            <input type="number"
-                   class="p-2.5 w-full z-20 ps-10 text-sm text-gray-900 bg-gray-50 rounded-lg border-gray-50  border  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-e-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-                   placeholder="Max price"/>
+            <input
+              [(ngModel)]="maxPrice"
+              type="number"
+              class="p-2.5 w-full z-20 ps-10 text-sm text-gray-900 bg-gray-50 rounded-lg border-gray-50  border  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-e-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+              placeholder="Max price"/>
           </div>
 
         </div>
@@ -47,9 +51,11 @@ import { Component } from '@angular/core';
                       d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
               </svg>
             </div>
-            <input type="search"
-                   class="w-full p-2.5 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50"
-                   placeholder="Search Product..."/>
+            <input
+              [(ngModel)]="searchQuery"
+              type="search"
+              class="w-full p-2.5 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50"
+              placeholder="Search Product..."/>
           </div>
           <button type="submit"
                   class="text-white bg-gradient-to-r from-sky-900 via-pink-700 to-amber-600 hover:opacity-90 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
@@ -78,5 +84,17 @@ import { Component } from '@angular/core';
 })
 export class FilterBarComponent {
 
+  minPrice: number = 0;
+  maxPrice: number = 9999999;
+  searchQuery: string = "";
 
+  @Output() onFilterChange: EventEmitter<{minPrice: number; maxPrice: number; query: string}> = new EventEmitter();
+
+  onSubmit() {
+    this.onFilterChange.emit({
+      minPrice: this.minPrice,
+      maxPrice: this.maxPrice,
+      query: this.searchQuery
+    });
+  }
 }

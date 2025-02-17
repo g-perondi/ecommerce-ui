@@ -5,7 +5,7 @@ import { Component } from "@angular/core";
   standalone: false,
   template: `
     <div
-      class="flex my-auto mx-2 md:w-2/3 flex-col items-center justify-center bg-white/40 py-2 px-4 rounded-xl text-center backdrop-blur-md">
+      class="flex my-auto mx-2 md:w-2/3 flex-col items-center justify-center bg-white/40 py-2 px-4 rounded-xl text-center shadow-md backdrop-blur-md">
 
       <div>
         <img ngSrc="assets/images/brand-logo.svg" alt="Tee Party logo" height="200" width="200" priority>

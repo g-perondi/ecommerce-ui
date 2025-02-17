@@ -16,3 +16,9 @@
   }
 
 }
+
+@layer components {
+  .full-screen {
+    @apply min-h-[calc(100vh-62px-160px)] md:min-h-[calc(100vh-126px)];
+  }
+}

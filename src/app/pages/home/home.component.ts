@@ -5,7 +5,7 @@ import { Component } from "@angular/core";
   standalone: false,
   template: `
     <div
-      class="flex items-center justify-center bg-cover bg-fixed min-h-[calc(100vh-62px-160px)] md:min-h-[calc(100vh-126px)]"
+      class="flex items-center justify-center bg-cover bg-fixed full-screen"
       style="background-image: url('assets/images/bg-image.jpg')"
     >
       <app-newsletter-form/>
