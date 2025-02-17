@@ -1,14 +1,14 @@
-import {Component, Input} from "@angular/core";
-import {Product} from '../../product.model';
+import { Component, Input } from "@angular/core";
+import { Product } from '../../product.model';
 
 @Component({
   selector: "app-product-card",
   standalone: false,
   template: `
 
-    <div class="flex flex-col justify-between items-center p-4 md:p-6">
+    <div class="flex flex-col justify-between items-center p-2 md:p-6">
 
-      <div class="w-full rounded-md flex items-center justify-center">
+      <div class="w-full rounded-md flex items-center justify-center pt-2">
         <img
           class="object-cover rounded-md w-1/2 md:w-full"
           src="assets/images/t-shirts/{{ product.image }}" alt="Product"

@@ -1,6 +1,6 @@
-import {Component, inject, OnInit} from "@angular/core";
-import {Router} from "@angular/router";
-import {HeaderItem} from "./header-item/HeaderItem.model";
+import { Component, inject, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { HeaderItem } from "./header-item/HeaderItem.model";
 
 @Component({
   selector: "app-header",
@@ -56,7 +56,7 @@ export class HeaderComponent implements OnInit {
 
   private readonly router: Router = inject(Router);
 
-  userLoggedIn = false;
+  userLoggedIn = true;
 
   headerItems!: HeaderItem[];
   mobileHeaderItems!: HeaderItem[];
@@ -86,33 +86,20 @@ export class HeaderComponent implements OnInit {
       this.headerItems = [
         {
           name: "Home",
-          path: "",
-          icon: undefined,
-          subMenus: undefined
+          path: ""
         },
         {
           name: "About us",
-          path: "",
-          icon: undefined,
-          subMenus: undefined
+          path: ""
         },
         {
           name: "Products",
           path: "products",
-          icon: undefined,
-          subMenus: undefined
         },
         {
           name: "Cart",
           path: "cart",
-          icon: "shopping-cart",
-          subMenus: [
-            {
-              name: "Cart Items",
-              path: "",
-              icon: undefined
-            }
-          ]
+          icon: "shopping-cart"
         },
         {
           name: "Profile",
@@ -121,103 +108,77 @@ export class HeaderComponent implements OnInit {
           subMenus: [
             {
               name: "Profile",
-              path: "profile",
-              icon: undefined
+              path: "profile"
             },
             {
               name: "Orders",
-              path: "orders",
-              icon: undefined
+              path: "orders"
             },
             {
               name: "Logout",
-              path: "logout",
-              icon: undefined
+              path: "logout"
             }
           ]
         }];
       this.mobileHeaderItems = [
         {
           name: "Home",
-          path: "",
-          icon: undefined,
-          subMenus: undefined
+          path: ""
         },
         {
           name: "About us",
-          path: "",
-          icon: undefined,
-          subMenus: undefined
+          path: ""
         },
         {
           name: "Products",
-          path: "products",
-          icon: undefined,
-          subMenus: undefined
+          path: "products"
         },
         {
           name: "Cart",
           path: "cart",
-          icon: "shopping-cart",
-          subMenus: undefined
+          icon: "shopping-cart"
         },
         {
           name: "Profile",
           path: "profile",
-          icon: "user",
-          subMenus: undefined
+          icon: "user"
         }];
     } else {
       this.headerItems = [
         {
           name: "Home",
-          path: "",
-          icon: undefined,
-          subMenus: undefined
+          path: ""
         },
         {
           name: "About us",
-          path: "",
-          icon: undefined,
-          subMenus: undefined
+          path: ""
         },
         {
           name: "Products",
-          path: "products",
-          icon: undefined,
-          subMenus: undefined
+          path: "products"
         },
         {
           name: "Login",
           path: "",
-          icon: "log-in",
-          subMenus: undefined
+          icon: "log-in"
         }];
     }
     this.mobileHeaderItems = this.mobileHeaderItems = [
       {
         name: "Home",
-        path: "",
-        icon: undefined,
-        subMenus: undefined
+        path: ""
       },
       {
         name: "About us",
-        path: "",
-        icon: undefined,
-        subMenus: undefined
+        path: ""
       },
       {
         name: "Products",
-        path: "products",
-        icon: undefined,
-        subMenus: undefined
+        path: "products"
       },
       {
         name: "Login",
-        path: "",
-        icon: undefined,
-        subMenus: undefined
+        path: ""
       }];
   }
 

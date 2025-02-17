@@ -4,7 +4,7 @@ export const T_SHIRTS: Product[] =
 [
     {
         "product_id": 10001,
-        "product_name": "Classic White Tee",
+        "product_name": "Classic White",
         "description": "A timeless white t-shirt made from 100% cotton.",
         "price": 19.99,
         "special_price": 14.99,
@@ -13,7 +13,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10002,
-        "product_name": "Vintage Black Tee",
+        "product_name": "Vintage Black",
         "description": "A soft black t-shirt with a vintage wash.",
         "price": 24.99,
         "special_price": 19.99,
@@ -22,7 +22,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10003,
-        "product_name": "Graphic Print Tee",
+        "product_name": "Graphic Print",
         "description": "A trendy t-shirt featuring a unique graphic print.",
         "price": 29.99,
         "special_price": 24.99,
@@ -31,7 +31,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10004,
-        "product_name": "Sporty Blue Tee",
+        "product_name": "Sporty Blue",
         "description": "A breathable athletic t-shirt in navy blue.",
         "price": 22.99,
         "special_price": 18.99,
@@ -40,7 +40,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10005,
-        "product_name": "Retro Striped Tee",
+        "product_name": "Retro Striped",
         "description": "A stylish t-shirt with classic retro stripes.",
         "price": 27.99,
         "special_price": 22.99,
@@ -49,7 +49,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10006,
-        "product_name": "Minimalist Grey Tee",
+        "product_name": "Minimalist Grey",
         "description": "A simple and elegant heather grey t-shirt.",
         "price": 20.99,
         "special_price": 16.99,
@@ -58,7 +58,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10007,
-        "product_name": "Urban Streetwear Tee",
+        "product_name": "Urban Streetwear",
         "description": "A modern fit t-shirt with an urban streetwear design.",
         "price": 32.99,
         "special_price": 26.99,
@@ -67,7 +67,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10008,
-        "product_name": "Casual Green Tee",
+        "product_name": "Casual Green",
         "description": "A casual everyday t-shirt in forest green.",
         "price": 21.99,
         "special_price": 17.99,
@@ -76,7 +76,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10009,
-        "product_name": "Bold Red Tee",
+        "product_name": "Bold Red",
         "description": "A striking red t-shirt for a bold statement.",
         "price": 23.99,
         "special_price": 19.99,
@@ -85,7 +85,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10010,
-        "product_name": "Summer Vibes Tee",
+        "product_name": "Summer Vibes",
         "description": "A lightweight t-shirt perfect for summer days.",
         "price": 25.99,
         "special_price": 20.99,
@@ -94,7 +94,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10011,
-        "product_name": "Skater Style Tee",
+        "product_name": "Skater Style",
         "description": "A loose-fit t-shirt ideal for skaters.",
         "price": 26.99,
         "special_price": 21.99,
@@ -103,7 +103,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10012,
-        "product_name": "Abstract Art Tee",
+        "product_name": "Abstract Art",
         "description": "A t-shirt featuring a unique abstract design.",
         "price": 30.99,
         "special_price": 24.99,
@@ -112,7 +112,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10013,
-        "product_name": "Mountain Explorer Tee",
+        "product_name": "Mountain Explorer",
         "description": "Perfect for adventurers and nature lovers.",
         "price": 28.99,
         "special_price": 22.99,
@@ -121,7 +121,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10014,
-        "product_name": "Techno Wave Tee",
+        "product_name": "Techno Wave",
         "description": "A futuristic t-shirt with cyberpunk-inspired graphics.",
         "price": 34.99,
         "special_price": 27.99,
@@ -130,7 +130,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10015,
-        "product_name": "Music Festival Tee",
+        "product_name": "Music Festival",
         "description": "Designed for music lovers and festival-goers.",
         "price": 27.49,
         "special_price": 22.49,
@@ -139,7 +139,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10016,
-        "product_name": "Vintage Washed Tee",
+        "product_name": "Vintage Washed",
         "description": "A soft vintage-washed t-shirt.",
         "price": 22.49,
         "special_price": 18.49,
@@ -148,7 +148,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10017,
-        "product_name": "Tie-Dye Swirl Tee",
+        "product_name": "Tie-Dye Swirl",
         "description": "A colorful, fun tie-dye t-shirt.",
         "price": 26.99,
         "special_price": 21.99,
@@ -157,7 +157,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10018,
-        "product_name": "Monochrome Classic Tee",
+        "product_name": "Monochrome Classic",
         "description": "A sleek, minimal black-and-white t-shirt.",
         "price": 24.49,
         "special_price": 19.99,
@@ -166,7 +166,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10019,
-        "product_name": "Sunset Horizon Tee",
+        "product_name": "Sunset Horizon",
         "description": "Inspired by beautiful sunset colors.",
         "price": 31.99,
         "special_price": 25.99,
@@ -175,7 +175,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10020,
-        "product_name": "Galaxy Print Tee",
+        "product_name": "Galaxy Print",
         "description": "A t-shirt with a stunning galaxy-themed print.",
         "price": 35.99,
         "special_price": 28.99,
@@ -184,7 +184,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10021,
-        "product_name": "Ocean Wave Tee",
+        "product_name": "Ocean Wave",
         "description": "A blue t-shirt inspired by ocean waves.",
         "price": 27.99,
         "special_price": 22.99,
@@ -193,7 +193,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10022,
-        "product_name": "Cyber Grid Tee",
+        "product_name": "Cyber Grid",
         "description": "A futuristic t-shirt with neon cyberpunk vibes.",
         "price": 33.99,
         "special_price": 27.99,
@@ -202,7 +202,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10023,
-        "product_name": "Wild Nature Tee",
+        "product_name": "Wild Nature",
         "description": "Featuring a nature-inspired design.",
         "price": 29.49,
         "special_price": 23.99,
@@ -211,7 +211,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10024,
-        "product_name": "Neon Street Tee",
+        "product_name": "Neon Street",
         "description": "A bright and bold neon graphic tee.",
         "price": 31.99,
         "special_price": 25.99,
@@ -220,7 +220,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10025,
-        "product_name": "Floral Bloom Tee",
+        "product_name": "Floral Bloom",
         "description": "A soft cotton tee with a floral pattern.",
         "price": 26.99,
         "special_price": 21.99,
@@ -229,7 +229,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10026,
-        "product_name": "Monochrome Geometric Tee",
+        "product_name": "Monochrome Geometric",
         "description": "A t-shirt with a minimalist geometric design.",
         "price": 24.99,
         "special_price": 19.99,
@@ -238,7 +238,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10027,
-        "product_name": "Retro Arcade Tee",
+        "product_name": "Retro Arcade",
         "description": "A gaming-inspired t-shirt with pixel art.",
         "price": 32.99,
         "special_price": 26.49,
@@ -247,7 +247,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10028,
-        "product_name": "Skull Street Tee",
+        "product_name": "Skull Street",
         "description": "A bold black t-shirt with a skull print.",
         "price": 28.99,
         "special_price": 23.49,
@@ -256,7 +256,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10029,
-        "product_name": "Mountain Adventure Tee",
+        "product_name": "Mountain Adventure",
         "description": "Perfect for outdoor lovers.",
         "price": 30.99,
         "special_price": 24.99,
@@ -265,7 +265,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10030,
-        "product_name": "Anime Art Tee",
+        "product_name": "Anime Art",
         "description": "A t-shirt with a stylish anime-inspired print.",
         "price": 27.99,
         "special_price": 22.99,
@@ -274,7 +274,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10031,
-        "product_name": "Street Graffiti Tee",
+        "product_name": "Street Graffiti",
         "description": "Urban-style t-shirt with graffiti art.",
         "price": 34.99,
         "special_price": 28.49,
@@ -283,7 +283,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10032,
-        "product_name": "Futuristic Tech Tee",
+        "product_name": "Futuristic Tech",
         "description": "A high-tech looking design for sci-fi lovers.",
         "price": 36.99,
         "special_price": 29.99,
@@ -292,7 +292,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10033,
-        "product_name": "Lunar Eclipse Tee",
+        "product_name": "Lunar Eclipse",
         "description": "Inspired by space and the cosmos.",
         "price": 29.99,
         "special_price": 24.49,
@@ -301,7 +301,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10034,
-        "product_name": "Abstract Lines Tee",
+        "product_name": "Abstract Lines",
         "description": "A t-shirt with a minimal and modern art print.",
         "price": 25.99,
         "special_price": 20.99,
@@ -310,7 +310,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10035,
-        "product_name": "Galaxy Nebula Tee",
+        "product_name": "Galaxy Nebula",
         "description": "A cosmic-themed print t-shirt.",
         "price": 35.99,
         "special_price": 28.99,
@@ -319,7 +319,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10036,
-        "product_name": "Punk Rock Tee",
+        "product_name": "Punk Rock",
         "description": "A rebellious punk-inspired graphic tee.",
         "price": 27.99,
         "special_price": 22.49,
@@ -328,7 +328,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10037,
-        "product_name": "Surfer Vibes Tee",
+        "product_name": "Surfer Vibes",
         "description": "A laid-back beach t-shirt.",
         "price": 26.49,
         "special_price": 21.49,
@@ -337,7 +337,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10038,
-        "product_name": "Classic Polo Tee",
+        "product_name": "Classic Polo",
         "description": "A refined t-shirt with a polo collar.",
         "price": 30.99,
         "special_price": 25.49,
@@ -346,7 +346,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10039,
-        "product_name": "Digital Matrix Tee",
+        "product_name": "Digital Matrix",
         "description": "A t-shirt with a cyber-digital matrix effect.",
         "price": 31.99,
         "special_price": 25.99,
@@ -355,7 +355,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10040,
-        "product_name": "Rainbow Gradient Tee",
+        "product_name": "Rainbow Gradient",
         "description": "A colorful gradient effect design.",
         "price": 28.99,
         "special_price": 23.49,
@@ -364,7 +364,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10041,
-        "product_name": "Minimal Script Tee",
+        "product_name": "Minimal Script",
         "description": "A text-based tee with a cool typography design.",
         "price": 24.99,
         "special_price": 19.99,
@@ -373,7 +373,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10042,
-        "product_name": "Comic Pop Art Tee",
+        "product_name": "Comic Pop Art",
         "description": "A bold and colorful comic-inspired design.",
         "price": 29.49,
         "special_price": 23.49,
@@ -382,7 +382,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10043,
-        "product_name": "Hip-Hop Street Tee",
+        "product_name": "Hip-Hop Street",
         "description": "A hip-hop inspired streetwear graphic tee.",
         "price": 33.99,
         "special_price": 27.49,
@@ -391,7 +391,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10044,
-        "product_name": "Cosmic Explorer Tee",
+        "product_name": "Cosmic Explorer",
         "description": "A t-shirt with astronaut and space elements.",
         "price": 35.49,
         "special_price": 28.49,
@@ -400,7 +400,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10045,
-        "product_name": "Japanese Kanji Tee",
+        "product_name": "Japanese Kanji",
         "description": "A minimal tee featuring Japanese kanji.",
         "price": 27.99,
         "special_price": 22.99,
@@ -409,7 +409,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10046,
-        "product_name": "Urban Camouflage Tee",
+        "product_name": "Urban Camouflage",
         "description": "A modern camouflage design.",
         "price": 31.49,
         "special_price": 25.99,
@@ -418,7 +418,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10047,
-        "product_name": "Grunge Aesthetic Tee",
+        "product_name": "Grunge Aesthetic",
         "description": "A raw and edgy design perfect for grunge lovers.",
         "price": 28.99,
         "special_price": 23.99,
@@ -427,7 +427,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10048,
-        "product_name": "Space Neon Tee",
+        "product_name": "Space Neon",
         "description": "A bright neon galaxy design.",
         "price": 34.99,
         "special_price": 27.99,
@@ -436,7 +436,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10049,
-        "product_name": "Sunset Palm Tee",
+        "product_name": "Sunset Palm",
         "description": "A relaxed palm tree sunset t-shirt.",
         "price": 29.99,
         "special_price": 24.49,
@@ -445,7 +445,7 @@ export const T_SHIRTS: Product[] =
     },
     {
         "product_id": 10050,
-        "product_name": "Wave Rider Tee",
+        "product_name": "Wave Rider",
         "description": "Surf culture-inspired wave print.",
         "price": 26.99,
         "special_price": 21.99,
