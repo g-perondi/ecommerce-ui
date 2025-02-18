@@ -12,7 +12,8 @@ import {type ProductsPage} from './products-page.model';
 
       <app-product-list [products]="productsPage.content"/>
 
-      <app-pagination (pageChanged)="onPageChange($event)" [currentPage]="productsPage.pageNumber"
+      <app-pagination (pageChanged)="onPageChange($event)"
+                      [currentPage]="productsPage.pageNumber"
                       [totalPages]="productsPage.totalPages"/>
 
     </div>
@@ -39,7 +40,7 @@ export class ProductsComponent implements OnInit {
   selectedSorting: string = "name-asc";
 
   ngOnInit(): void {
-    this.fetchProductPage(1, 15);
+    this.fetchProductPage(1, this.productsPage.pageSize);
   }
 
   onSetFilters(filters: { minPrice?: number; maxPrice?: number; query?: string }) {
@@ -58,6 +59,7 @@ export class ProductsComponent implements OnInit {
 
   fetchProductPage(pageNumber: number, pageSize: number) {
     this.isFetching = true;
+
     const subscription = this.productsService.getProducts(pageNumber, pageSize).subscribe({
       next: (page) => {
         this.productsPage.content = page.content;
@@ -72,6 +74,7 @@ export class ProductsComponent implements OnInit {
       },
       complete: () => {
         this.isFetching = false;
+        window.scrollTo(0, 0);
       }
     })
 

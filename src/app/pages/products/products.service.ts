@@ -11,18 +11,19 @@ export class ProductsService {
 
   private readonly products: Product[] = T_SHIRTS;
 
-  getProducts(pageNumber: number, size: number = 20): Observable<ProductsPage> {
+  getProducts(pageNumber: number, pageSize: number = 20): Observable<ProductsPage> {
     const totalElements = this.products.length;
-    const totalPages = Math.ceil(totalElements / size);
-    const isLastPage = (pageNumber === totalPages);
-    const start = (pageNumber * size) - size;
-    const end = start + size < this.products.length ? start + size : this.products.length;
-    const content = this.products.slice(start, end);
+    const totalPages = Math.ceil(totalElements / pageSize);
+    const isLastPage = pageNumber === totalPages;
+
+    const startIdx = (pageNumber * pageSize) - pageSize;
+    const endIdx = startIdx + pageSize < totalElements ? startIdx + pageSize : totalElements;
+    const content = this.products.slice(startIdx, endIdx);
 
     const page: ProductsPage = {
       content: content,
       pageNumber: pageNumber,
-      pageSize: size,
+      pageSize: pageSize,
       totalElements: totalElements,
       totalPages: totalPages,
       isLastPage: isLastPage

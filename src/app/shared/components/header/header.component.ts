@@ -90,7 +90,7 @@ export class HeaderComponent implements OnInit {
         },
         {
           name: "About us",
-          path: ""
+          path: "about"
         },
         {
           name: "Products",
@@ -127,7 +127,7 @@ export class HeaderComponent implements OnInit {
         },
         {
           name: "About us",
-          path: ""
+          path: "about"
         },
         {
           name: "Products",
@@ -151,7 +151,7 @@ export class HeaderComponent implements OnInit {
         },
         {
           name: "About us",
-          path: ""
+          path: "about"
         },
         {
           name: "Products",
@@ -170,7 +170,7 @@ export class HeaderComponent implements OnInit {
       },
       {
         name: "About us",
-        path: ""
+        path: "about"
       },
       {
         name: "Products",
