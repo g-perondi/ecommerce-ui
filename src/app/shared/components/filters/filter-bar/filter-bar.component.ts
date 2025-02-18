@@ -4,7 +4,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
   selector: "app-filter-bar",
   standalone: false,
   template: `
-    <div class="flex flex-col w-full gap-1 items-center p-4 mt-10 rounded-md bg-white shadow-md">
+    <div class="flex flex-col justify-center gap-1 items-center p-4 mt-10 rounded-md bg-white shadow-md">
 
       <form class="flex items-center justify-between gap-1 w-full" (ngSubmit)="onSubmit()">
 
@@ -22,7 +22,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
               name="minPrice"
               [(ngModel)]="minPrice"
               type="number"
-              class="p-2.5 w-full z-20 ps-10 text-sm text-gray-900 bg-gray-50 rounded-lg border-gray-50 border"
+              class="p-2.5 w-full z-20 ps-10 text-sm text-gray-900 bg-gray-50 shadow-sm rounded-lg border-gray-50 border"
               placeholder="Min price"/>
           </div>
 
@@ -37,7 +37,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
             <input type="number"
                    name="maxPrice"
                    [(ngModel)]="maxPrice"
-                   class="p-2.5 w-full z-20 ps-10 text-sm text-gray-900 bg-gray-50 rounded-lg border-gray-50 border"
+                   class="p-2.5 w-full z-20 ps-10 text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border-gray-50 border"
                    placeholder="Max price"/>
           </div>
 
@@ -55,7 +55,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
             <input type="search"
                    name="searchQuery"
                    [(ngModel)]="searchQuery"
-                   class="w-full p-2.5 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50"
+                   class="w-full p-2.5 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50"
                    placeholder="Search Product..."/>
           </div>
           <button type="submit"
@@ -72,7 +72,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
       <div class="rounded-sm md:w-1/3 shadow:md">
         <select
           (change)="onSortingChange($event)"
-          class="text-gray-900 bg-gray-50 rounded-lg border-gray-50  border text-sm focus:ring-blue-500 focus:border-blue-500 w-full p-2.5">
+          class="text-gray-900 bg-gray-50 rounded-lg border-gray-50 shadow-sm border text-sm focus:ring-blue-500 focus:border-blue-500 w-full p-2.5">
           <option value="name-asc">Sort by Name (ascending)</option>
           <option value="name-desc">Sort by Name (descending)</option>
           <option value="price-asc">Sort by Price (from low to high)</option>
