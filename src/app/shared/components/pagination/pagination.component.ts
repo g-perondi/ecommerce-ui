@@ -13,7 +13,7 @@ import {Component, EventEmitter, Input, Output} from "@angular/core";
             <button
               (click)="previousPage()"
               [ngClass]="{'disabled, opacity-30': currentPage === 1}"
-              class="flex items-center justify-center px-4 h-10 cursor-pointer ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-amber-500/80">
+              class="flex items-center justify-center px-4 h-10 cursor-pointer ms-0 leading-tight text-zinc-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-amber-500/80">
               <svg class="w-3 h-3 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
                    viewBox="0 0 6 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -35,7 +35,7 @@ import {Component, EventEmitter, Input, Output} from "@angular/core";
             <button
               (click)="nextPage()"
               [ngClass]="{'disabled, opacity-30': currentPage === totalPages}"
-              class="flex items-center justify-center px-4 h-10 cursor-pointer leading-tight bg-white border border-gray-300 rounded-e-lg hover:bg-amber-500/80 text-zinc-200">
+              class="flex items-center justify-center px-4 h-10 cursor-pointer leading-tight bg-white text-zinc-500 border border-gray-300 rounded-e-lg hover:bg-amber-500/80">
               <svg class="w-3 h-3 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
                    viewBox="0 0 6 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -53,9 +53,8 @@ import {Component, EventEmitter, Input, Output} from "@angular/core";
 })
 export class PaginationComponent {
 
-  currentPage: number = 1;
-
-  @Input() totalPages: number = 5;
+  @Input({required: true}) currentPage!: number;
+  @Input({required: true}) totalPages!: number;
   @Output() pageChanged = new EventEmitter<number>();
 
   onSelectPage(page: number) {

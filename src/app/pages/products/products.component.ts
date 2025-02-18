@@ -1,6 +1,6 @@
-import {Component, inject, OnInit} from "@angular/core";
-import {Product} from './product.model';
+import {Component, DestroyRef, inject, OnInit} from "@angular/core";
 import {ProductsService} from './products.service';
+import {type ProductsPage} from './products-page.model';
 
 @Component({
   selector: "app-products",
@@ -10,9 +10,10 @@ import {ProductsService} from './products.service';
 
       <app-filter-bar (filtersSet)="onSetFilters($event)" (sortingOptionChanged)="onSortingOptionChange($event)"/>
 
-      <app-product-list [products]="products"/>
+      <app-product-list [products]="productsPage.content"/>
 
-      <app-pagination (pageChanged)="onPageChange($event)"/>
+      <app-pagination (pageChanged)="onPageChange($event)" [currentPage]="productsPage.pageNumber"
+                      [totalPages]="productsPage.totalPages"/>
 
     </div>
   `,
@@ -21,15 +22,24 @@ import {ProductsService} from './products.service';
 export class ProductsComponent implements OnInit {
 
   private readonly productsService: ProductsService = inject(ProductsService);
+  private readonly destroyRef = inject(DestroyRef);
 
-  products!: Product[];
+  isFetching: boolean = false;
+
+  productsPage: ProductsPage = {
+    content: [],
+    pageNumber: 1,
+    pageSize: 20,
+    totalPages: 0,
+    totalElements: 0,
+    isLastPage: true
+  };
+
   productFilters?: { minPrice?: number; maxPrice?: number; query?: string };
   selectedSorting: string = "name-asc";
 
   ngOnInit(): void {
-    this.productsService.getProducts().subscribe(
-      (data) => (this.products = data)
-    );
+    this.fetchProductPage(1, 15);
   }
 
   onSetFilters(filters: { minPrice?: number; maxPrice?: number; query?: string }) {
@@ -42,8 +52,30 @@ export class ProductsComponent implements OnInit {
     console.log(this.selectedSorting);
   }
 
-  onPageChange(page: number) {
-    console.log("page", page);
+  onPageChange(newPage: number) {
+    this.fetchProductPage(newPage, this.productsPage.pageSize);
+  }
+
+  fetchProductPage(pageNumber: number, pageSize: number) {
+    this.isFetching = true;
+    const subscription = this.productsService.getProducts(pageNumber, pageSize).subscribe({
+      next: (page) => {
+        this.productsPage.content = page.content;
+        this.productsPage.pageNumber = page.pageNumber;
+        this.productsPage.pageSize = page.pageSize;
+        this.productsPage.totalElements = page.totalElements;
+        this.productsPage.totalPages = page.totalPages;
+        this.productsPage.isLastPage = page.isLastPage;
+      },
+      error: error => {
+        console.error(error);
+      },
+      complete: () => {
+        this.isFetching = false;
+      }
+    })
+
+    this.destroyRef.onDestroy(() => subscription.unsubscribe());
   }
 
 }
