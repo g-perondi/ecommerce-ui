@@ -26,8 +26,8 @@ import {Component, EventEmitter, Input, Output} from "@angular/core";
             <button
               [ngClass]="{'bg-amber-500 text-white disabled scale-110': currentPage === (i + 1), 'bg-white cursor-pointer hover:bg-amber-500/80 hover:text-white': currentPage !== (i + 1)}"
               (click)="onSelectPage(i+1)"
-               class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 ">
-              {{ i+1 }}
+              class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 ">
+              {{ i + 1 }}
             </button>
           </li>
 
@@ -35,7 +35,7 @@ import {Component, EventEmitter, Input, Output} from "@angular/core";
             <button
               (click)="nextPage()"
               [ngClass]="{'disabled, opacity-30': currentPage === totalPages}"
-               class="flex items-center justify-center px-4 h-10 cursor-pointer leading-tight bg-white border border-gray-300 rounded-e-lg hover:bg-amber-500/80 text-zinc-200">
+              class="flex items-center justify-center px-4 h-10 cursor-pointer leading-tight bg-white border border-gray-300 rounded-e-lg hover:bg-amber-500/80 text-zinc-200">
               <svg class="w-3 h-3 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
                    viewBox="0 0 6 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

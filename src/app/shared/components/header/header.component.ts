@@ -1,6 +1,6 @@
-import { Component, inject, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { HeaderItem } from "./header-item/HeaderItem.model";
+import {Component, inject, OnInit} from "@angular/core";
+import {Router} from "@angular/router";
+import {HeaderItem} from "./header-item/HeaderItem.model";
 
 @Component({
   selector: "app-header",

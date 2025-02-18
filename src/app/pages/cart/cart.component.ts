@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-import { type Cart } from './cart.model';
+import {Component} from "@angular/core";
+import {type Cart} from './cart.model';
 
 @Component({
   selector: "app-cart",

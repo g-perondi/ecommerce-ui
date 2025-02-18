@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { type HeaderItem } from "./HeaderItem.model";
+import {Component, EventEmitter, Input, Output} from "@angular/core";
+import {type HeaderItem} from "./HeaderItem.model";
 
 @Component({
   selector: "app-header-item",

@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
-import { T_SHIRTS } from '../../../../t-shirts';
-import { Product } from './product.model';
+import {Component, inject, OnInit} from "@angular/core";
+import {Product} from './product.model';
+import {ProductsService} from './products.service';
 
 @Component({
   selector: "app-products",
@@ -8,11 +8,11 @@ import { Product } from './product.model';
   template: `
     <div class="flex flex-col gap-6 items-center justify-center px-5 bg-zinc-200 full-screen">
 
-      <app-filter-bar (filtersSet)="onSetFilters($event)" (sortingOptionChanged)="onSortingOptionChange($event)" />
+      <app-filter-bar (filtersSet)="onSetFilters($event)" (sortingOptionChanged)="onSortingOptionChange($event)"/>
 
       <app-product-list [products]="products"/>
 
-      <app-pagination (pageChanged)="onPageChange($event)" />
+      <app-pagination (pageChanged)="onPageChange($event)"/>
 
     </div>
   `,
@@ -20,12 +20,16 @@ import { Product } from './product.model';
 })
 export class ProductsComponent implements OnInit {
 
+  private readonly productsService: ProductsService = inject(ProductsService);
+
   products!: Product[];
   productFilters?: { minPrice?: number; maxPrice?: number; query?: string };
   selectedSorting: string = "name-asc";
 
   ngOnInit(): void {
-    this.products = T_SHIRTS;
+    this.productsService.getProducts().subscribe(
+      (data) => (this.products = data)
+    );
   }
 
   onSetFilters(filters: { minPrice?: number; maxPrice?: number; query?: string }) {

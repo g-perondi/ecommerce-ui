@@ -1,5 +1,5 @@
-import { Component, Input } from "@angular/core";
-import { type CartItem } from './cart-item/cart-item.model';
+import {Component, Input} from "@angular/core";
+import {type CartItem} from './cart-item/cart-item.model';
 
 @Component({
   selector: "app-cart-item-list",

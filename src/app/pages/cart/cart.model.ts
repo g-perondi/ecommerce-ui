@@ -1,4 +1,4 @@
-import { CartItem } from './cart-item-list/cart-item/cart-item.model';
+import {CartItem} from './cart-item-list/cart-item/cart-item.model';
 
 export interface Cart {
 
