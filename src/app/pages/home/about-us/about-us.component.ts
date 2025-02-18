@@ -4,7 +4,7 @@ import {Component} from "@angular/core";
   selector: "app-about-us",
   standalone: false,
   template: `
-    <div class="max-w-2/3 mx-auto px-6 py-12 mt-20 mb-10 bg-white shadow-lg rounded-lg">
+    <div class="max-w-2/3 mx-auto px-8 py-12 mt-20 mb-10 bg-white shadow-lg rounded-lg">
       <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">About Us</h1>
 
       <section class="text-gray-700 leading-relaxed mb-12">

@@ -1,6 +1,7 @@
 import {Component, DestroyRef, inject, OnInit} from "@angular/core";
 import {ProductsService} from './products.service';
 import {type ProductsPage} from './products-page.model';
+import {Product} from './product.model';
 
 @Component({
   selector: "app-products",
@@ -30,17 +31,19 @@ export class ProductsComponent implements OnInit {
   productsPage: ProductsPage = {
     content: [],
     pageNumber: 1,
-    pageSize: 20,
+    pageSize: 10,
     totalPages: 0,
     totalElements: 0,
     isLastPage: true
   };
 
+  sortBy: keyof Product = "product_name";
+  order: "asc" | "desc" = "asc";
+
   productFilters?: { minPrice?: number; maxPrice?: number; query?: string };
-  selectedSorting: string = "name-asc";
 
   ngOnInit(): void {
-    this.fetchProductPage(1, this.productsPage.pageSize);
+    this.fetchProductPage(1, this.productsPage.pageSize, this.sortBy, this.order);
   }
 
   onSetFilters(filters: { minPrice?: number; maxPrice?: number; query?: string }) {
@@ -48,19 +51,10 @@ export class ProductsComponent implements OnInit {
     console.log(this.productFilters);
   }
 
-  onSortingOptionChange(selectedSorting: string) {
-    this.selectedSorting = selectedSorting;
-    console.log(this.selectedSorting);
-  }
-
-  onPageChange(newPage: number) {
-    this.fetchProductPage(newPage, this.productsPage.pageSize);
-  }
-
-  fetchProductPage(pageNumber: number, pageSize: number) {
+  fetchProductPage(pageNumber: number, pageSize: number, sortBy: keyof Product, order: "asc" | "desc") {
     this.isFetching = true;
 
-    const subscription = this.productsService.getProducts(pageNumber, pageSize).subscribe({
+    const subscription = this.productsService.getProducts(pageNumber, pageSize, sortBy, order).subscribe({
       next: (page) => {
         this.productsPage.content = page.content;
         this.productsPage.pageNumber = page.pageNumber;
@@ -79,6 +73,31 @@ export class ProductsComponent implements OnInit {
     })
 
     this.destroyRef.onDestroy(() => subscription.unsubscribe());
+  }
+
+  onSortingOptionChange(selectedSorting: string) {
+    let sortBy: "product_name" | "price" = "product_name";
+    let order: "asc" | "desc" = "asc";
+
+    switch (selectedSorting) {
+      case "name-desc":
+        order = "desc";
+        break;
+      case "price-asc":
+        sortBy = "price";
+        break;
+      case "price-desc":
+        sortBy = "price";
+        order = "desc";
+        break;
+    }
+    this.sortBy = sortBy;
+    this.order = order;
+    this.fetchProductPage(1, this.productsPage.pageSize, sortBy, order);
+  }
+
+  onPageChange(newPage: number) {
+    this.fetchProductPage(newPage, this.productsPage.pageSize, this.sortBy, this.order);
   }
 
 }
