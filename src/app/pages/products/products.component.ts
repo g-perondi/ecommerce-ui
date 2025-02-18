@@ -31,7 +31,7 @@ export class ProductsComponent implements OnInit {
   productsPage: ProductsPage = {
     content: [],
     pageNumber: 1,
-    pageSize: 10,
+    pageSize: 20,
     totalPages: 0,
     totalElements: 0,
     isLastPage: true
@@ -40,21 +40,42 @@ export class ProductsComponent implements OnInit {
   sortBy: keyof Product = "product_name";
   order: "asc" | "desc" = "asc";
 
-  productFilters?: { minPrice?: number; maxPrice?: number; query?: string };
-
   ngOnInit(): void {
     this.fetchProductPage(1, this.productsPage.pageSize, this.sortBy, this.order);
-  }
-
-  onSetFilters(filters: { minPrice?: number; maxPrice?: number; query?: string }) {
-    this.productFilters = filters;
-    console.log(this.productFilters);
   }
 
   fetchProductPage(pageNumber: number, pageSize: number, sortBy: keyof Product, order: "asc" | "desc") {
     this.isFetching = true;
 
     const subscription = this.productsService.getProducts(pageNumber, pageSize, sortBy, order).subscribe({
+      next: (page) => {
+        this.productsPage.content = page.content;
+        this.productsPage.pageNumber = page.pageNumber;
+        this.productsPage.pageSize = page.pageSize;
+        this.productsPage.totalElements = page.totalElements;
+        this.productsPage.totalPages = page.totalPages;
+        this.productsPage.isLastPage = page.isLastPage;
+      },
+      error: error => {
+        console.error(error);
+      },
+      complete: () => {
+        this.isFetching = false;
+        window.scrollTo(0, 0);
+      }
+    })
+
+    this.destroyRef.onDestroy(() => subscription.unsubscribe());
+  }
+
+  onSetFilters(filters: { minPrice?: number; maxPrice?: number; query?: string }) {
+    const subscription = this.productsService.getProductsFiltered(
+      1,
+      this.productsPage.pageSize,
+      this.sortBy,
+      this.order,
+      filters
+    ).subscribe({
       next: (page) => {
         this.productsPage.content = page.content;
         this.productsPage.pageNumber = page.pageNumber;
