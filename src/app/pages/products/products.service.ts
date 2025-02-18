@@ -92,7 +92,7 @@ export class ProductsService {
   }
 
   private sortProducts(arr: Product[], sortBy: keyof Product, order: "asc" | "desc"): Product[] {
-    return arr.sort((a: Product,b: Product) => {
+    return arr.sort((a: Product, b: Product) => {
       const aValue = a[sortBy];
       const bValue = b[sortBy];
       if (typeof aValue === "string" && typeof bValue === "string") {

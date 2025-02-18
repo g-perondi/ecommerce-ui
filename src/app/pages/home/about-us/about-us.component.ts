@@ -9,14 +9,18 @@ import {Component} from "@angular/core";
 
       <section class="text-gray-700 leading-relaxed mb-12">
         <p class="text-lg text-center">
-          At <strong>Tee Party</strong>, we believe a t-shirt is more than just fabric - it's a statement, a piece of art, and a form of self-expression. Our mission is to bring high-quality, stylish, and unique tees to people who love to stand out.
+          At <strong>Tee Party</strong>, we believe a t-shirt is more than just fabric - it's a statement, a piece of
+          art, and a form of self-expression. Our mission is to bring high-quality, stylish, and unique tees to people
+          who love to stand out.
         </p>
       </section>
 
       <section class="mb-12">
         <h2 class="text-2xl font-semibold text-gray-800 mb-4">Our Story</h2>
         <p class="text-gray-600">
-          Founded in 2015 by a group of design enthusiasts, Tee Party started as a small passion project. Frustrated with the lack of unique, high-quality tees, we decided to create our own. What began in a basement with a handful of designs has grown into a global brand with a loyal community of t-shirt lovers.
+          Founded in 2015 by a group of design enthusiasts, Tee Party started as a small passion project. Frustrated
+          with the lack of unique, high-quality tees, we decided to create our own. What began in a basement with a
+          handful of designs has grown into a global brand with a loyal community of t-shirt lovers.
         </p>
       </section>
 
@@ -33,7 +37,8 @@ import {Component} from "@angular/core";
       <section class="mb-12">
         <h2 class="text-2xl font-semibold text-gray-800 mb-4">Our Mission & Values</h2>
         <p class="text-gray-600">
-          Our goal is to create more than just clothing—we want to inspire confidence and creativity. Every t-shirt we make reflects our commitment to innovation, sustainability, inclusivity, and fun.
+          Our goal is to create more than just clothing—we want to inspire confidence and creativity. Every t-shirt we
+          make reflects our commitment to innovation, sustainability, inclusivity, and fun.
         </p>
       </section>
 
@@ -62,13 +67,15 @@ import {Component} from "@angular/core";
       <section class="mb-12">
         <h2 class="text-2xl font-semibold text-gray-800 mb-4">Looking Ahead</h2>
         <p class="text-gray-600">
-          We are constantly innovating—expanding into new styles, launching eco-friendly collections, and introducing an AR try-on experience. The future of Tee Party is bright, and we want you to be a part of it!
+          We are constantly innovating—expanding into new styles, launching eco-friendly collections, and introducing an
+          AR try-on experience. The future of Tee Party is bright, and we want you to be a part of it!
         </p>
       </section>
 
       <section class="text-center">
         <h2 class="text-2xl font-semibold text-gray-800 mb-4">Thank You for Being Part of Our Story!</h2>
-        <p class="text-gray-600">Your support means the world to us. Keep rocking your favorite tees and spreading the love!</p>
+        <p class="text-gray-600">Your support means the world to us. Keep rocking your favorite tees and spreading the
+          love!</p>
       </section>
     </div>
 

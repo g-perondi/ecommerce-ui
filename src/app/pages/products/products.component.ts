@@ -48,17 +48,8 @@ export class ProductsComponent implements OnInit {
     this.isFetching = true;
 
     const subscription = this.productsService.getProducts(pageNumber, pageSize, sortBy, order).subscribe({
-      next: (page) => {
-        this.productsPage.content = page.content;
-        this.productsPage.pageNumber = page.pageNumber;
-        this.productsPage.pageSize = page.pageSize;
-        this.productsPage.totalElements = page.totalElements;
-        this.productsPage.totalPages = page.totalPages;
-        this.productsPage.isLastPage = page.isLastPage;
-      },
-      error: error => {
-        console.error(error);
-      },
+      next: (page) => this.updateProductPage(page),
+      error: error => console.error(error),
       complete: () => {
         this.isFetching = false;
         window.scrollTo(0, 0);
@@ -76,17 +67,8 @@ export class ProductsComponent implements OnInit {
       this.order,
       filters
     ).subscribe({
-      next: (page) => {
-        this.productsPage.content = page.content;
-        this.productsPage.pageNumber = page.pageNumber;
-        this.productsPage.pageSize = page.pageSize;
-        this.productsPage.totalElements = page.totalElements;
-        this.productsPage.totalPages = page.totalPages;
-        this.productsPage.isLastPage = page.isLastPage;
-      },
-      error: error => {
-        console.error(error);
-      },
+      next: (page) => this.updateProductPage(page),
+      error: error => console.error(error),
       complete: () => {
         this.isFetching = false;
         window.scrollTo(0, 0);
@@ -121,4 +103,12 @@ export class ProductsComponent implements OnInit {
     this.fetchProductPage(newPage, this.productsPage.pageSize, this.sortBy, this.order);
   }
 
+  private updateProductPage(page: ProductsPage) {
+    this.productsPage.content = page.content;
+    this.productsPage.pageNumber = page.pageNumber;
+    this.productsPage.pageSize = page.pageSize;
+    this.productsPage.totalElements = page.totalElements;
+    this.productsPage.totalPages = page.totalPages;
+    this.productsPage.isLastPage = page.isLastPage;
+  }
 }
