@@ -71,8 +71,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
     <div class="w-full flex justify-end pt-5">
       <div class="rounded-sm md:w-1/3 shadow:md">
         <select
+          (change)="onSortingChange($event)"
           class="text-gray-900 bg-gray-50 rounded-lg border-gray-50  border text-sm focus:ring-blue-500 focus:border-blue-500 w-full p-2.5">
-          <option selected>Sort by Name (ascending)</option>
+          <option value="name-asc">Sort by Name (ascending)</option>
           <option value="name-desc">Sort by Name (descending)</option>
           <option value="price-asc">Sort by Price (from low to high)</option>
           <option value="price-desc">Sort by Price (from high to low)</option>
@@ -90,6 +91,7 @@ export class FilterBarComponent {
   searchQuery?: string;
 
   @Output() filtersSet = new EventEmitter<{minPrice?: number; maxPrice?: number; query?: string;}>();
+  @Output() sortingOptionChanged = new EventEmitter<string>();
 
   onSubmit() {
 
@@ -103,10 +105,10 @@ export class FilterBarComponent {
       maxPrice: this.maxPrice,
       query: this.searchQuery,
     });
-    console.log({
-      minPrice: this.minPrice,
-      maxPrice: this.maxPrice,
-      query: this.searchQuery,
-    });
+  }
+
+  onSortingChange(event: Event) {
+    const selectedSorting = (event.target as HTMLSelectElement).value;
+    this.sortingOptionChanged.emit(selectedSorting);
   }
 }

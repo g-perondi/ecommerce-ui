@@ -8,11 +8,11 @@ import { Product } from './product.model';
   template: `
     <div class="flex flex-col gap-6 items-center justify-center px-5 bg-zinc-200 full-screen">
 
-      <app-filter-bar (filtersSet)="onSetFilters($event)" />
+      <app-filter-bar (filtersSet)="onSetFilters($event)" (sortingOptionChanged)="onSortingOptionChange($event)" />
 
       <app-product-list [products]="products"/>
 
-      <app-pagination/>
+      <app-pagination (pageChanged)="onPageChange($event)" />
 
     </div>
   `,
@@ -21,7 +21,8 @@ import { Product } from './product.model';
 export class ProductsComponent implements OnInit {
 
   products!: Product[];
-  productFilters: any;
+  productFilters?: { minPrice?: number; maxPrice?: number; query?: string };
+  selectedSorting: string = "name-asc";
 
   ngOnInit(): void {
     this.products = T_SHIRTS;
@@ -31,4 +32,14 @@ export class ProductsComponent implements OnInit {
     this.productFilters = filters;
     console.log(this.productFilters);
   }
+
+  onSortingOptionChange(selectedSorting: string) {
+    this.selectedSorting = selectedSorting;
+    console.log(this.selectedSorting);
+  }
+
+  onPageChange(page: number) {
+    console.log("page", page);
+  }
+
 }
