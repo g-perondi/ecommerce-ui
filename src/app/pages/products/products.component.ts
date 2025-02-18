@@ -1,7 +1,7 @@
 import {Component, DestroyRef, inject, OnInit} from "@angular/core";
 import {ProductsService} from './products.service';
 import {type ProductsPage} from './products-page.model';
-import {Product} from './product.model';
+import {type Product} from './product.model';
 
 @Component({
   selector: "app-products",
@@ -76,8 +76,8 @@ export class ProductsComponent implements OnInit {
   }
 
   onSortingOptionChange(selectedSorting: string) {
-    let sortBy: "product_name" | "price" = "product_name";
-    let order: "asc" | "desc" = "asc";
+    let sortBy: keyof Product = this.sortBy;
+    let order: "asc" | "desc" = this.order;
 
     switch (selectedSorting) {
       case "name-desc":

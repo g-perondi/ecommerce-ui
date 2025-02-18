@@ -14,8 +14,8 @@ export class ProductsService {
   getProducts(
     pageNumber: number,
     pageSize: number,
-    sortBy?: keyof Product,
-    order: "asc" | "desc" = "asc"
+    sortBy: keyof Product,
+    order: "asc" | "desc"
   ): Observable<ProductsPage> {
     const totalElements = this.products.length;
     const totalPages = Math.ceil(totalElements / pageSize);
@@ -24,7 +24,6 @@ export class ProductsService {
     const startIdx = (pageNumber * pageSize) - pageSize;
     const endIdx = startIdx + pageSize < totalElements ? startIdx + pageSize : totalElements;
     const sortedProducts = [...this.products];
-
 
     if (sortBy) {
       sortedProducts.sort((a: Product,b: Product) => {
