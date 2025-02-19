@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 
-import {FeatherModule} from 'angular-feather';
-import {allIcons} from 'angular-feather/icons';
+import { FeatherModule } from 'angular-feather';
+import { allIcons } from 'angular-feather/icons';
 
 @NgModule({
   imports: [

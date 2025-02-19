@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: "app-filter-bar",
@@ -94,12 +94,6 @@ export class FilterBarComponent {
   @Output() sortingOptionChanged = new EventEmitter<string>();
 
   onSubmit() {
-
-    if (!this.minPrice && !this.maxPrice && !this.searchQuery) {
-      console.log("invalid filter");
-      return;
-    }
-
     this.filtersSet.emit({
       minPrice: this.minPrice,
       maxPrice: this.maxPrice,

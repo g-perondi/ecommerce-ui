@@ -1,5 +1,5 @@
-import {Component} from "@angular/core";
-import {type Cart} from './cart.model';
+import { Component } from "@angular/core";
+import { type Cart } from './cart.model';
 
 @Component({
   selector: "app-cart",
@@ -81,11 +81,11 @@ export class CartComponent {
       {
         cartItemId: 1,
         product: {
-          product_id: 1,
-          product_name: "test",
+          productId: 1,
+          productName: "test",
           description: "test description",
           price: 100.00,
-          special_price: 80.00,
+          specialPrice: 80.00,
           discount: 0.2,
           image: "tshirt_1.png"
         },

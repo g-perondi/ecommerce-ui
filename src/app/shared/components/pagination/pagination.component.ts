@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
   selector: "app-pagination",
@@ -12,8 +12,8 @@ import {Component, EventEmitter, Input, Output} from "@angular/core";
           <li>
             <button
               (click)="previousPage()"
-              [ngClass]="{'disabled opacity-30 hover:bg-white': currentPage === 1, 'cursor-pointer hover:bg-amber-500/80 hover:text-white': currentPage !== 1}"
-              class="flex items-center justify-center px-4 h-10 cursor-pointer ms-0 leading-tight text-zinc-500 bg-white border border-e-0 border-gray-300 rounded-s-lg">
+              [ngClass]="{'disabled opacity-30 hover:bg-white': currentPage === 0, 'cursor-pointer hover:bg-amber-500/80 hover:text-white': currentPage !== 0}"
+              class="flex items-center justify-center px-4 h-10 leading-tight bg-white text-zinc-500 border border-e-0 border-gray-300 rounded-s-lg">
               <svg class="w-3 h-3 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
                    viewBox="0 0 6 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -24,8 +24,8 @@ import {Component, EventEmitter, Input, Output} from "@angular/core";
 
           <li *ngFor="let page of [].constructor(totalPages); let i = index">
             <button
-              [ngClass]="{'bg-amber-500 text-white disabled scale-110': currentPage === (i + 1), 'bg-white cursor-pointer hover:bg-amber-500/80 hover:text-white': currentPage !== (i + 1)}"
-              (click)="onSelectPage(i+1)"
+              [ngClass]="{'bg-amber-500 text-white disabled scale-110': currentPage === (i), 'bg-white cursor-pointer hover:bg-amber-500/80 hover:text-white': currentPage !== i}"
+              (click)="onSelectPage(i)"
               class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 ">
               {{ i + 1 }}
             </button>
@@ -34,7 +34,7 @@ import {Component, EventEmitter, Input, Output} from "@angular/core";
           <li>
             <button
               (click)="nextPage()"
-              [ngClass]="{'disabled opacity-30 hover:bg-white cursor-pointer': currentPage === totalPages, 'cursor-pointer hover:bg-amber-500/80 hover:text-white': currentPage !== totalPages}"
+              [ngClass]="{'disabled opacity-30 hover:bg-white cursor-pointer': currentPage === totalPages-1 || totalPages === 0, 'cursor-pointer hover:bg-amber-500/80 hover:text-white': currentPage !== totalPages-1 && totalPages !== 0}"
               class="flex items-center justify-center px-4 h-10 leading-tight bg-white text-zinc-500 border border-gray-300 rounded-e-lg ">
               <svg class="w-3 h-3 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
                    viewBox="0 0 6 10">
@@ -58,20 +58,20 @@ export class PaginationComponent {
   @Output() pageChanged = new EventEmitter<number>();
 
   onSelectPage(page: number) {
-    if (page >= 1 && page <= this.totalPages && page !== this.currentPage) {
+    if (page >= 0 && page <= this.totalPages - 1 && page !== this.currentPage) {
       this.currentPage = page;
       this.pageChanged.emit(this.currentPage);
     }
   }
 
   previousPage() {
-    if (this.currentPage > 1) {
+    if (this.currentPage > 0) {
       this.onSelectPage(this.currentPage - 1);
     }
   }
 
   nextPage() {
-    if (this.currentPage < this.totalPages) {
+    if (this.currentPage < this.totalPages - 1) {
       this.onSelectPage(this.currentPage + 1);
     }
   }

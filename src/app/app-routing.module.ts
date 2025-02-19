@@ -1,11 +1,11 @@
-import {NgModule} from "@angular/core";
-import {RouterModule, Routes} from "@angular/router";
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
 
-import {HomeModule} from "./pages/home/home.module";
-import {ProductsModule} from "./pages/products/products.module";
-import {UserProfileModule} from "./pages/user-profile/user-profile.module";
-import {LayoutComponent} from "./shared/components/layout/layout.component";
-import {CartModule} from './pages/cart/cart.module';
+import { HomeModule } from "./pages/home/home.module";
+import { ProductsModule } from "./pages/products/products.module";
+import { UserProfileModule } from "./pages/user-profile/user-profile.module";
+import { LayoutComponent } from "./shared/components/layout/layout.component";
+import { CartModule } from './pages/cart/cart.module';
 
 const routes: Routes = [
   {

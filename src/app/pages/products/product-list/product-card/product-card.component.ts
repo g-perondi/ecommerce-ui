@@ -1,5 +1,5 @@
-import {Component, Input} from "@angular/core";
-import {Product} from '../../product.model';
+import { Component, Input } from "@angular/core";
+import { Product } from '../../product.model';
 
 @Component({
   selector: "app-product-card",
@@ -16,13 +16,13 @@ import {Product} from '../../product.model';
       </div>
 
       <div class="font-semibold text-xl text-center py-5 h-25">
-        {{ product.product_name }}
+        {{ product.productName }}
       </div>
 
       <div class="flex justify-between items-center  w-3/4 h-15">
 
         <div class="text-gray-600 text-md font-bold text-center">
-          {{ (product.discount !== 0 ? product.special_price : product.price) | currency }}
+          {{ (product.discount !== 0 ? product.specialPrice : product.price) | currency }}
         </div>
 
         <button

@@ -1,7 +1,7 @@
-import {Component, DestroyRef, inject, OnInit} from "@angular/core";
-import {ProductsService} from './products.service';
-import {type ProductsPage} from './products-page.model';
-import {type Product} from './product.model';
+import { Component, DestroyRef, inject, OnInit } from "@angular/core";
+import { ProductsService } from './products.service';
+import { type ProductsPage } from './products-page.model';
+import { type Product } from './product.model';
 
 @Component({
   selector: "app-products",
@@ -26,29 +26,38 @@ export class ProductsComponent implements OnInit {
   private readonly productsService: ProductsService = inject(ProductsService);
   private readonly destroyRef = inject(DestroyRef);
 
-  isFetching: boolean = false;
-
   productsPage: ProductsPage = {
     content: [],
-    pageNumber: 1,
+    pageNumber: 0,
     pageSize: 20,
     totalPages: 0,
     totalElements: 0,
     isLastPage: true
   };
 
-  sortBy: keyof Product = "product_name";
+  isFetching: boolean = false;
+  filterActive: boolean = false;
+
+  sortBy: keyof Product = "productName";
   order: "asc" | "desc" = "asc";
 
+  filters: { minPrice?: number; maxPrice?: number; query?: string; } = {};
+
   ngOnInit(): void {
-    this.fetchProductPage(1, this.productsPage.pageSize, this.sortBy, this.order);
+    this.fetchProductPage();
   }
 
-  fetchProductPage(pageNumber: number, pageSize: number, sortBy: keyof Product, order: "asc" | "desc") {
+  fetchProductPage(pageNumber: number = 0) {
     this.isFetching = true;
 
-    const subscription = this.productsService.getProducts(pageNumber, pageSize, sortBy, order).subscribe({
-      next: (page) => this.updateProductPage(page),
+    const subscription = this.productsService.getProducts(
+      pageNumber,
+      this.productsPage.pageSize,
+      this.sortBy,
+      this.order,
+      this.filterActive ? this.filters : undefined
+    ).subscribe({
+      next: (page) => this.productsPage = {...page},
       error: error => console.error(error),
       complete: () => {
         this.isFetching = false;
@@ -60,55 +69,34 @@ export class ProductsComponent implements OnInit {
   }
 
   onSetFilters(filters: { minPrice?: number; maxPrice?: number; query?: string }) {
-    const subscription = this.productsService.getProductsFiltered(
-      1,
-      this.productsPage.pageSize,
-      this.sortBy,
-      this.order,
-      filters
-    ).subscribe({
-      next: (page) => this.updateProductPage(page),
-      error: error => console.error(error),
-      complete: () => {
-        this.isFetching = false;
-        window.scrollTo(0, 0);
-      }
-    })
-
-    this.destroyRef.onDestroy(() => subscription.unsubscribe());
+    this.filters = filters;
+    this.filterActive = true;
+    this.fetchProductPage();
   }
 
   onSortingOptionChange(selectedSorting: string) {
-    let sortBy: keyof Product = this.sortBy;
-    let order: "asc" | "desc" = this.order;
-
     switch (selectedSorting) {
+      case "name-asc":
+        this.sortBy = "productName";
+        this.order = "asc";
+        break;
       case "name-desc":
-        order = "desc";
+        this.sortBy = "productName";
+        this.order = "desc";
         break;
       case "price-asc":
-        sortBy = "price";
+        this.sortBy = "price";
+        this.order = "asc";
         break;
       case "price-desc":
-        sortBy = "price";
-        order = "desc";
+        this.sortBy = "price";
+        this.order = "desc";
         break;
     }
-    this.sortBy = sortBy;
-    this.order = order;
-    this.fetchProductPage(1, this.productsPage.pageSize, sortBy, order);
+    this.fetchProductPage();
   }
 
   onPageChange(newPage: number) {
-    this.fetchProductPage(newPage, this.productsPage.pageSize, this.sortBy, this.order);
-  }
-
-  private updateProductPage(page: ProductsPage) {
-    this.productsPage.content = page.content;
-    this.productsPage.pageNumber = page.pageNumber;
-    this.productsPage.pageSize = page.pageSize;
-    this.productsPage.totalElements = page.totalElements;
-    this.productsPage.totalPages = page.totalPages;
-    this.productsPage.isLastPage = page.isLastPage;
+    this.fetchProductPage(newPage);
   }
 }
