@@ -83,7 +83,6 @@ export class ProductDetailsComponent implements OnInit {
         this.product = null;
       },
       complete: () => this.isLoading = true
-
     });
   }
 

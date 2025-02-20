@@ -90,7 +90,7 @@ export class CartComponent {
           image: "tshirt_1.png"
         },
         quantity: 4,
-        totalPrice: 80.00,
+        productPrice: 80.00,
         discount: 0.2,
         image: "tshirt_1.png"
       }

@@ -28,7 +28,8 @@ export class ProductsService {
       .set('order', order);
 
     if (filters) {
-      params = params.set('keyword', filters.query ? filters.query : "")
+      params = params
+        .set('keyword', filters.query ? filters.query : "")
         .set('min', filters.minPrice ? filters.minPrice : "0")
         .set('max', filters.maxPrice ? filters.maxPrice : "99999");
     }

@@ -24,8 +24,17 @@ export class ProductListComponent {
 
   @Input() products?: Product[];
 
-  onCardClicked(productId: number) {
-    this.router.navigate([`/products/${ productId }`]);
+  async onCardClicked(productId: number) {
+    try {
+      const success = await this.router.navigate([`/products/${ productId }`]);
+      if (success) {
+        console.log('success');
+      } else {
+        console.log('fail');
+      }
+    } catch (error) {
+      console.error('error', error);
+    }
   }
 
   trackByFn(index: number, product: Product): number {
