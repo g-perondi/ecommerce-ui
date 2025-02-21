@@ -1,5 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, inject, OnInit } from "@angular/core";
 import { type Cart } from './cart.model';
+import { CartService } from './cart.service';
 
 @Component({
   selector: "app-cart",
@@ -72,33 +73,29 @@ import { type Cart } from './cart.model';
   standalone: false,
   styles: []
 })
-export class CartComponent {
+export class CartComponent implements OnInit {
 
-  cart: Cart = {
-    cartId: 1,
-    totalPrice: 320.0,
-    cartItems: [
-      {
-        cartItemId: 1,
-        product: {
-          productId: 1,
-          productName: "test",
-          description: "test description",
-          price: 100.00,
-          specialPrice: 80.00,
-          discount: 0.2,
-          image: "tshirt_1.png"
-        },
-        quantity: 4,
-        productPrice: 80.00,
-        discount: 0.2,
-        image: "tshirt_1.png"
-      }
-    ]
-  };
+  private cartService = inject(CartService);
+
+  cart: Cart = { cartItems: [], totalPrice: 0 };
+  private totalItems: number = 0;
 
   originalPrice = this.cart.cartItems.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
   totalSaving = this.cart.totalPrice - this.originalPrice;
 
+  ngOnInit() {
+    this.cartService.get().subscribe(cart => {
+      this.cart = cart;
+      this.totalItems = cart.cartItems.length;
+    });
+  }
+
+  updateQuantity(productId: number, operation: 'increase' | 'decrease') {
+    this.cartService.update(this.cart);
+  }
+
+  removeItem(productId: number) {
+    this.cartService.removeProduct(productId);
+  }
 
 }
