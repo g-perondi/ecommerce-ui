@@ -1,6 +1,6 @@
-import { Component, inject, OnInit } from "@angular/core";
-import { type Cart } from './cart.model';
-import { CartService } from './cart.service';
+import {Component, inject, OnInit} from "@angular/core";
+import {type Cart} from './cart.model';
+import {CartService} from './cart.service';
 
 @Component({
   selector: "app-cart",
@@ -13,7 +13,10 @@ import { CartService } from './cart.service';
         <div class="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
 
           <div class="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
-            <app-cart-item-list [cartItems]="cart.cartItems"/>
+            <app-cart-item-list *ngIf="cart.cartItems.length !== 0" [cartItems]="cart.cartItems"/>
+            <div *ngIf="cart.cartItems.length === 0">
+              Your cart is empty
+            </div>
           </div>
 
           <div class="mx-auto mt-6 max-w-4xl flex-1 space-y-6 lg:mt-0 lg:w-full">
@@ -75,22 +78,25 @@ import { CartService } from './cart.service';
 })
 export class CartComponent implements OnInit {
 
-  private cartService = inject(CartService);
+  private readonly cartService = inject(CartService);
 
-  cart: Cart = { cartItems: [], totalPrice: 0 };
-  private totalItems: number = 0;
+  cart: Cart = {cartItems: [], totalPrice: 0};
 
-  originalPrice = this.cart.cartItems.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
-  totalSaving = this.cart.totalPrice - this.originalPrice;
+  originalPrice!: number;
+  discountedPrice!: number;
+  totalSaving!: number;
 
   ngOnInit() {
     this.cartService.get().subscribe(cart => {
       this.cart = cart;
-      this.totalItems = cart.cartItems.length;
     });
+
+    this.originalPrice = this.cart.cartItems.reduce((sum, cartItem) => sum + (cartItem.product.price * cartItem.quantity), 0);
+    this.discountedPrice = this.cart.cartItems.reduce((sum, cartItem) => sum + (cartItem.product.specialPrice * cartItem.quantity), 0)
+    this.totalSaving = this.originalPrice - this.discountedPrice;
   }
 
-  updateQuantity(productId: number, operation: 'increase' | 'decrease') {
+  updateQuantity(productId: number) {
     this.cartService.update(this.cart);
   }
 

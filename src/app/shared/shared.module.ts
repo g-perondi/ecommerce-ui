@@ -12,6 +12,7 @@ import { RouterOutlet } from '@angular/router';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { FilterBarComponent } from './components/filters/filter-bar/filter-bar.component';
 import { FormsModule } from "@angular/forms";
+import {AuthService} from './services/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,12 @@ import { FormsModule } from "@angular/forms";
     HeaderItemComponent,
     LayoutComponent,
     PaginationComponent,
-    FilterBarComponent
+    FilterBarComponent,
   ],
   exports: [
     LayoutComponent,
     FilterBarComponent,
-    PaginationComponent
+    PaginationComponent,
   ],
   imports: [
     CommonModule,

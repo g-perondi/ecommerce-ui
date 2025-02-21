@@ -8,19 +8,27 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CartService {
 
-  private apiUrl = 'http://localhost:8080/api/v1/carts';
-  private cartSubject = new BehaviorSubject<Cart>({cartItems: [], totalPrice: 0});
+  private readonly apiUrl = 'http://localhost:8080/api/v1/carts';
+  private readonly cartSubject = new BehaviorSubject<Cart>({cartItems: [], totalPrice: 0});
 
-  constructor(private http: HttpClient, private destroyRef: DestroyRef) {
+  constructor(private readonly http: HttpClient, private readonly destroyRef: DestroyRef) {
     this.loadFromLocalStorage();
   }
 
   get(): Observable<Cart> {
+    const subscription = this.http.get<Cart>(`${this.apiUrl}`, { withCredentials: true })
+      .subscribe(
+        cart => {
+          console.log("Cart fetched:", cart);
+          this.updateLocalCart(cart);
+        }
+      );
+    this.destroyRef.onDestroy(() => subscription.unsubscribe());
     return this.cartSubject.asObservable();
   }
 
   addProduct(productId: number, quantity: number = 1) {
-    const subscription = this.http.post<Cart>(`${this.apiUrl}/products/${productId}?quantity=${quantity}`, {})
+    const subscription = this.http.post<Cart>(`${this.apiUrl}/products/${productId}?quantity=${quantity}`, {}, { withCredentials: true })
       .subscribe(cart => {
         console.log("Cart updated:", cart);
         this.updateLocalCart(cart);
@@ -40,7 +48,7 @@ export class CartService {
   }
 
   update(cart: Cart) {
-    const subscription = this.http.put<Cart>(this.apiUrl, {})
+    const subscription = this.http.put<Cart>(this.apiUrl, {cart})
       .subscribe(cart => this.updateLocalCart(cart));
     this.destroyRef.onDestroy(() => subscription.unsubscribe());
   }

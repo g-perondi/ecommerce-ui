@@ -9,9 +9,9 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 })
 export class ProductsService {
 
-  private getBaseUrl = "http://localhost:8080/api/v1/public/products";
+  private readonly getBaseUrl = "http://localhost:8080/api/v1/public/products";
 
-  constructor(private http: HttpClient) {
+  constructor(private readonly http: HttpClient) {
   }
 
   getProducts(

@@ -7,7 +7,7 @@ import { type CartItem } from "./cart-item.model";
       <div class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:p-6">
           <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
               <a href="#" class="w-20 shrink-0 md:order-1">
-                  <img class="h-20 w-20 rounded-md dark:hidden" src="assets/images/t-shirts/{{ cartItem.image }}"
+                  <img class="h-20 w-20 rounded-md dark:hidden" src="assets/images/t-shirts/{{ cartItem.product.image }}"
                        alt="product image"/>
               </a>
 

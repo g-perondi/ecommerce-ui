@@ -1,6 +1,8 @@
 import { Component, inject, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { HeaderItem } from "./header-item/HeaderItem.model";
+import {AuthService} from '../../services/auth/auth.service';
+import {BehaviorSubject} from 'rxjs';
 
 @Component({
   selector: "app-header",
@@ -56,18 +58,28 @@ export class HeaderComponent implements OnInit {
 
   private readonly router: Router = inject(Router);
 
-  userLoggedIn = true;
+  userLoggedIn$ = new BehaviorSubject<boolean>(true);
 
   headerItems!: HeaderItem[];
   mobileHeaderItems!: HeaderItem[];
 
   mobileMenuOpen = false;
 
+  private readonly authService = inject(AuthService);
+
   onToggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
   }
 
   async onItemClicked(path: string) {
+
+    if (path === "login") {
+      console.log("DENTRO")
+      this.authService.login({username: "user", password: "useruser"});
+      this.userLoggedIn$.next(true);
+      path = "home"
+    }
+
     try {
       const success = await this.router.navigate([path]);
       if (success) {
@@ -82,7 +94,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.userLoggedIn) {
+    if (this.userLoggedIn$.value) {
       this.headerItems = [
         {
           name: "Home",
@@ -159,7 +171,7 @@ export class HeaderComponent implements OnInit {
         },
         {
           name: "Login",
-          path: "",
+          path: "login",
           icon: "log-in"
         }];
     }
@@ -178,7 +190,7 @@ export class HeaderComponent implements OnInit {
       },
       {
         name: "Login",
-        path: ""
+        path: "login"
       }];
   }
 

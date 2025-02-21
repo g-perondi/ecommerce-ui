@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
       <div
         *ngFor="let product of products; trackBy: trackByFn"
         class="md:w-2/7 lg:w-2/9 xl:w-2/11 shadow-md rounded-lg flex flex-col items-center bg-white md:hover:scale-110 transition-transform duration-500">
-        <app-product-card (click)="onCardClicked(product.productId)" [product]="product"/>
+        <app-product-card (click)="onCardClicked(product.productId)" [product]="product" />
       </div>
 
     </div>
@@ -20,7 +20,7 @@ import { Router } from '@angular/router';
 })
 export class ProductListComponent {
 
-  private router: Router = inject(Router);
+  private readonly router: Router = inject(Router);
 
   @Input() products?: Product[];
 

@@ -38,7 +38,7 @@ export class ProductsComponent implements OnInit {
   isFetching: boolean = false;
   filterActive: boolean = false;
 
-  sortBy: keyof Product = "productName";
+  sortBy: keyof Product = "productId";
   order: "asc" | "desc" = "asc";
 
   filters: { minPrice?: number; maxPrice?: number; query?: string; } = {};
